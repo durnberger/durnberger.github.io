@@ -2,17 +2,15 @@
 layout: default
 ---
 <div class="container-fluid">
-<div id="post">
+  <div id="post">
 
-  <h2>{{ page.title }}</h2>
+    <h2>{{ page.title }}</h2>
 
-  <p class="excerpt">{{ page.excerpt }}</p>
+    {{ content }}
 
-  {{ content }}
+    <p class="published">
+      {{ page.date | date: "%-d %B %Y" }}
+    </p>
 
-  <p class="published">
-    {{ page.date | date: "%-d %B %Y" }}
-  </p>
-
-</div><!--End of #post-->
+  </div><!--End of #post-->
 </div><!-- End of container-fluid-->

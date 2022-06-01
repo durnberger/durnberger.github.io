@@ -60,13 +60,11 @@
     <main>
 
       <div class="container-fluid">
-<div id="post">
+  <div id="post">
 
-  <h2>Jekyll and Liquid</h2>
+    <h2>Jekyll and Liquid</h2>
 
-  <p class="excerpt">How to display liquid coding within a code block.</p>
-
-  <p>When writing posts about configuring Jekyll, I discovered that <code class="language-plaintext highlighter-rouge">liquid</code> coding would not appear within a code block. For example, below is a code block as it should appear.</p>
+    <p>When writing posts about configuring Jekyll, I discovered that <code class="language-plaintext highlighter-rouge">liquid</code> coding would not appear within a code block. For example, below is a code block as it should appear.</p>
 
 <div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div id="archives"&gt;
   <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">post</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">site.categories.category-name</span><span class="w"> </span><span class="p">%}</span>
@@ -84,11 +82,11 @@
 <p>The problem arises because the tags within the code block are being processed. The solution? Add {% raw %} before the first line of the code block and {% endraw %} after the last line.</p>
 
 
-  <p class="published">
-    18 October 2020
-  </p>
+    <p class="published">
+      18 October 2020
+    </p>
 
-</div><!--End of #post-->
+  </div><!--End of #post-->
 </div><!-- End of container-fluid-->
 
 
