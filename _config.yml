@@ -17,7 +17,6 @@ permalink: /:year/:month/:day/:title/
 
 plugins:
   - jekyll-feed
-  - jekyll-paginate-v2
 
 sass:
   sass_dir: _sass
