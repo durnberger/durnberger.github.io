@@ -1,0 +1,86 @@
+body {
+  font-size: 12pt;
+  overflow-x: hidden;
+}
+
+header,
+main,
+footer {
+  max-width: $main-width-normal;
+  margin: 0 auto;
+}
+
+h1, h1.navbar-brand {
+  font-size: 1.75rem;
+}
+
+h2, h3, h4, h5, h6 {
+  padding-top: 1.75rem;
+}
+
+h2 {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 1.35rem;
+}
+
+h4 {
+  font-size: 1.1rem;
+}
+
+h5, h6 {
+  font-size: 1rem;
+}
+
+footer {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+  border-top: solid 1px $gray-500;
+}
+
+.pager {
+  width: 100%;
+  text-align: center;
+  padding-top: 1rem;
+}
+
+#archive {
+  #table {
+    width: 100%;
+    margin-bottom: 1.25rem;
+  }
+
+  #table th {
+    background-color: $gray-200;
+    padding-left: 0.5rem;
+  }
+
+  #table tr,
+  #table td {
+    border: solid 1px $gray-500;
+  }
+
+  #table td,
+  #table td a {
+    font-size: $font-size-small;
+  }
+
+  #table .published,
+  #table .link {
+    width: 20%;
+  }
+
+  #table .excerpt {
+    width: 60%;
+  }
+
+  #table .published,
+  #table .link,
+  #table .excerpt {
+    padding: 0 0.5rem 0.5rem 0.5rem;
+  }
+}

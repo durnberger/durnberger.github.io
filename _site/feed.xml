@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-06-01T16:11:06+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Technology</title><subtitle>I write about Linux and Ubuntu, and the FOSS tools available to photographers</subtitle><author><name>Paul Dürnberger</name></author><entry><title type="html">Compton</title><link href="http://localhost:4000/2022/05/31/compton/" rel="alternate" type="text/html" title="Compton" /><published>2022-05-31T00:00:00+01:00</published><updated>2022-05-31T00:00:00+01:00</updated><id>http://localhost:4000/2022/05/31/compton</id><content type="html" xml:base="http://localhost:4000/2022/05/31/compton/"><![CDATA[<p>As <a href="https://www.maketecheasier.com/speed-up-linux-desktop-with-compton/" target="_blank">www.maketecheasier.com</a> explain, <em>Compton is a super-lightweight standalone compositor designed to be used in conjunction with Linux desktops. Perfect for older hardware, it is often used by lightweight distros that need a compositor that won’t sacrifice speed and responsiveness</em>.</p>
+
+<p>On a Ubuntu based system, installing Compton is as easy as;</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt install compton
+</code></pre></div></div>
+
+<p>If like me, you wouldn’t know where to start to create the config file, you might also want to install <code class="language-plaintext highlighter-rouge">compton-conf</code>, which provides a user friendly GUI with which to generate the necessasry config file. The file will be saved to <code class="language-plaintext highlighter-rouge">~/.config/compton.conf</code>.</p>
+
+<p>An alternative is to use one of the config files made available by some of the generous souls at <a href="https://gist.github.com/starred" target="_blank">Github Gist</a>. I am presently using one created by <a href="https://gist.github.com/namdinh95" target="_blank">Nam Dinh</a>, which you can find <a href="https://gist.github.com/namdinh95/d820519782b7287a3392fc2f4e210d8e" target="_blank">here</a>. It is working a treat on my machine.</p>]]></content><author><name>Paul Dürnberger</name></author><category term="linux" /><category term="compositor" /><category term="compton" /><category term="screen" /><summary type="html"><![CDATA[Compton. A screen compositor that won’t sacrifice speed and responsiveness]]></summary></entry><entry><title type="html">Pdf To Image</title><link href="http://localhost:4000/2022/05/16/pdf-to-image/" rel="alternate" type="text/html" title="Pdf To Image" /><published>2022-05-16T00:00:00+01:00</published><updated>2022-05-16T00:00:00+01:00</updated><id>http://localhost:4000/2022/05/16/pdf-to-image</id><content type="html" xml:base="http://localhost:4000/2022/05/16/pdf-to-image/"><![CDATA[<p>This can be achieved using <code class="language-plaintext highlighter-rouge">pdftoppm</code>, a part of the <code class="language-plaintext highlighter-rouge">poppler-utils</code> package.</p>
+
+<p>To convert a PDF to a PNG:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pdftoppm input.pdf outputname -png
+
+</code></pre></div></div>
+
+<p>To convert a PDF to a JPEG:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pdftoppm input.pdf outputname -jpeg
+
+</code></pre></div></div>]]></content><author><name>Paul Dürnberger</name></author><category term="linux" /><category term="jpeg" /><category term="pdf" /><category term="png" /><summary type="html"><![CDATA[Convert a PDF into image file(s).]]></summary></entry><entry><title type="html">Pandoc</title><link href="http://localhost:4000/2022/05/05/pandoc/" rel="alternate" type="text/html" title="Pandoc" /><published>2022-05-05T00:00:00+01:00</published><updated>2022-05-05T00:00:00+01:00</updated><id>http://localhost:4000/2022/05/05/pandoc</id><content type="html" xml:base="http://localhost:4000/2022/05/05/pandoc/"><![CDATA[<h3 id="directories">Directories</h3>
+<p>Within my <code class="language-plaintext highlighter-rouge">documents</code> directory, I have 2 further directories, <code class="language-plaintext highlighter-rouge">layout</code> and <code class="language-plaintext highlighter-rouge">style</code>.</p>
+
+<p>Layout contains <code class="language-plaintext highlighter-rouge">header.html</code> and <code class="language-plaintext highlighter-rouge">footer.html</code>.</p>
+
+<h3 id="header">Header</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"header"</span><span class="nt">&gt;</span>
+
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"author"</span><span class="nt">&gt;</span>Name<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"contact-details"</span><span class="nt">&gt;</span>
+    Address <span class="nt">&lt;br</span> <span class="nt">/&gt;</span>
+    Telephone Number<span class="nt">&lt;br</span> <span class="nt">/&gt;</span>
+    Email
+  <span class="nt">&lt;/p&gt;</span>
+
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"content"</span><span class="nt">&gt;</span>
+
+</code></pre></div></div>
+
+<h3 id="footer">Footer</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;/div&gt;</span><span class="c">&lt;!--End of content--&gt;</span>
+
+<span class="nt">&lt;footer&gt;</span>
+
+  <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"signature"</span><span class="nt">&gt;</span> Name
+
+<span class="nt">&lt;/footer&gt;</span>
+
+</code></pre></div></div>
+
+<h3 id="documents">Documents</h3>
+<p>I write my letters using markdown documents, which are saved to the <code class="language-plaintext highlighter-rouge">documents</code> directory.</p>
+
+<h3 id="css">CSS</h3>
+<p>A stylesheet has been created, and saved to the <code class="language-plaintext highlighter-rouge">style</code> directory.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">html</span><span class="o">,</span>
+<span class="nt">body</span> <span class="p">{</span>
+  <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="p">;</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">0</span> <span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">body</span> <span class="p">{</span>
+  <span class="nl">background</span><span class="p">:</span> <span class="m">#fff</span><span class="p">;</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">black</span><span class="p">;</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="m">14px</span><span class="p">;</span>
+  <span class="nl">font-family</span><span class="p">:</span> <span class="n">Roboto</span><span class="p">,</span> <span class="s1">"sans-serif"</span><span class="p">;</span>
+  <span class="nl">line-height</span><span class="p">:</span> <span class="m">1.688</span> <span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">h1</span><span class="o">,</span> <span class="nt">h2</span><span class="o">,</span> <span class="nt">h3</span><span class="o">,</span> <span class="nt">h4</span><span class="o">,</span> <span class="nt">h5</span><span class="o">,</span> <span class="nt">h6</span> <span class="p">{</span>
+  <span class="nl">font-weight</span><span class="p">:</span> <span class="nb">bold</span><span class="p">;</span>
+  <span class="nl">text-align</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
+  <span class="nl">text-transform</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">p</span><span class="o">,</span> <span class="nt">ul</span><span class="o">,</span> <span class="nt">li</span><span class="o">,</span> <span class="nt">em</span> <span class="p">{</span>
+  <span class="nl">font-weight</span><span class="p">:</span> <span class="nb">normal</span><span class="p">;</span>
+  <span class="nl">text-align</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
+  <span class="nl">text-transform</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">em</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">li</span> <span class="p">{</span>
+  <span class="nl">padding-bottom</span><span class="p">:</span> <span class="m">1.25rem</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.author</span> <span class="p">{</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="m">2rem</span><span class="p">;</span>
+  <span class="nl">text-align</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+  <span class="nl">letter-spacing</span><span class="p">:</span> <span class="m">0.5rem</span><span class="p">;</span>
+  <span class="nl">text-transform</span><span class="p">:</span><span class="nb">uppercase</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.contact-details</span> <span class="p">{</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="m">0.9rem</span> <span class="p">;</span>
+  <span class="nl">text-align</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.content</span> <span class="p">{</span>
+  <span class="nl">padding-top</span><span class="p">:</span> <span class="m">3rem</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.signature</span> <span class="p">{</span>
+  <span class="nl">text-transform</span><span class="p">:</span> <span class="nb">uppercase</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">footer</span> <span class="p">{</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">5rem</span> <span class="m">0</span> <span class="m">2rem</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">blockquote</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span> <span class="p">;</span>
+  <span class="nl">margin-left</span><span class="p">:</span> <span class="m">0</span> <span class="c">/* Push block to right */</span> <span class="p">;</span>
+	<span class="nl">padding</span><span class="p">:</span> <span class="m">0.5rem</span> <span class="c">/*Gap between edge of block and text */</span> <span class="p">;</span>
+  <span class="nl">border-left</span><span class="p">:</span> <span class="m">0.15rem</span> <span class="nb">solid</span> <span class="no">blue</span> <span class="p">;</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="no">gray</span> <span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">blockquote</span> <span class="nt">p</span> <span class="p">{</span>
+  <span class="nl">font-style</span><span class="p">:</span> <span class="nb">italic</span> <span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="n">print</span> <span class="p">{</span>
+  <span class="nt">form</span><span class="o">,</span> <span class="nt">iframe</span><span class="o">,</span> <span class="nt">nav</span><span class="o">,</span> <span class="nt">object</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">@page</span> <span class="p">{</span>
+  <span class="nl">font-family</span><span class="p">:</span> <span class="n">Roboto</span><span class="p">,</span> <span class="s1">"sans-serif"</span><span class="p">;</span>
+  <span class="nl">margin</span><span class="p">:</span> <span class="m">20mm</span><span class="p">;</span>
+  <span class="nl">size</span><span class="p">:</span> <span class="n">A4</span><span class="p">;</span>
+
+  <span class="err">@top-right</span> <span class="err">{</span>
+    <span class="nl">content</span><span class="p">:</span> <span class="n">counter</span><span class="p">(</span><span class="n">page</span><span class="p">);</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">9pt</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">20mm</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">20mm</span><span class="p">;</span>
+    <span class="nl">text-align</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">@top-center</span> <span class="p">{</span>
+    <span class="nl">content</span><span class="p">:</span> <span class="s2">''</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">@top-left</span> <span class="p">{</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">@bottom-right</span> <span class="p">{</span>
+    <span class="nl">content</span><span class="p">:</span> <span class="s2">'Text'</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">9pt</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">12mm</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+    <span class="nl">vertical-align</span><span class="p">:</span> <span class="nb">middle</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">@bottom-center</span> <span class="p">{</span>
+    <span class="nl">background</span><span class="p">:</span> <span class="m">#ced4da</span><span class="p">;</span>
+    <span class="nl">content</span><span class="p">:</span> <span class="s2">''</span><span class="p">;</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">0.2mm</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+    <span class="nl">opacity</span><span class="p">:</span> <span class="m">0.6</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">@bottom-left</span> <span class="p">{</span>
+    <span class="nl">content</span><span class="p">:</span> <span class="s2">''</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">9pt</span><span class="p">;</span>
+    <span class="nl">text-transform</span><span class="p">:</span> <span class="nb">uppercase</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">12mm</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+    <span class="nl">vertical-align</span><span class="p">:</span> <span class="nb">middle</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="err">}</span>
+
+</code></pre></div></div>
+
+<h3 id="conversion">Conversion</h3>
+<p>To convert the markdown file to PDF, we would need to run the following command;</p>
+
+<p><code class="language-plaintext highlighter-rouge">pandoc -f markdown --include-before-body layout/header.html --include-after-body layout/footer.html --metadata pagetitle="Title" --metadata lang="en-GB" --pdf-engine weasyprint --css style/style.css input.md output.pdf</code></p>
+
+<p>This is rather a lot to remember, so instead write a bash script into which the various switches are defined. I have saved the script as <code class="language-plaintext highlighter-rouge">~/bin/write2pdf.sh</code>.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+<span class="c"># write2pdf.sh</span>
+
+pandoc  <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span> <span class="se">\</span>
+        <span class="nt">-f</span> markdown <span class="se">\</span>
+        <span class="nt">--include-before-body</span> layout/header.html <span class="se">\</span>
+        <span class="nt">--include-after-body</span> layout/footer.html <span class="se">\</span>
+        <span class="nt">--metadata</span> <span class="nv">pagetitle</span><span class="o">=</span><span class="s2">"Title"</span><span class="se">\</span>
+        <span class="nt">--metadata</span> <span class="nv">lang</span><span class="o">=</span><span class="s2">"en-GB"</span> <span class="se">\</span>
+        <span class="nt">--pdf-engine</span> weasyprint <span class="se">\</span>
+        <span class="nt">--css</span> style/style.css <span class="se">\</span>
+        <span class="nt">-o</span> <span class="s2">"</span><span class="nv">$2</span><span class="s2">"</span>
+
+</code></pre></div></div>
+
+<p><em>Don’t forget to make the script executable</em>.</p>
+
+<p>Now to complete the conversion, simply type the following;</p>
+
+<p><code class="language-plaintext highlighter-rouge">write2pdf.sh input.md output.pdf</code></p>
+
+<p>Here’s as alternative script. Instead appending the input and output file names to the script, why not create a script that simply converts all markdown files within a defined folder?</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+<span class="c"># ~/bin/write2pdf.sh</span>
+
+<span class="nv">folder</span><span class="o">=</span>/home/paul/Correspondence
+
+<span class="nb">cd</span> <span class="nv">$folder</span> <span class="o">&amp;&amp;</span>
+
+<span class="k">for </span>file <span class="k">in</span> <span class="k">*</span>.md<span class="p">;</span>
+
+  <span class="k">do
+
+    </span><span class="nv">stem</span><span class="o">=</span><span class="si">$(</span><span class="nb">basename</span> <span class="nv">$file</span> .md<span class="si">)</span>
+
+    pandoc <span class="nt">-f</span> markdown <span class="nt">--include-before-body</span> layout/header.html <span class="nt">--include-after-body</span> layout/footer.html <span class="nt">--metadata</span> <span class="nv">pagetitle</span><span class="o">=</span><span class="s2">"Title"</span> <span class="nt">--metadata</span> <span class="nv">lang</span><span class="o">=</span><span class="s2">"en-GB"</span> <span class="nt">--pdf-engine</span> weasyprint <span class="nt">--css</span> style/style.css <span class="nv">$file</span> <span class="nt">-o</span> <span class="nv">$stem</span>.pdf
+
+  <span class="k">done
+
+</span><span class="nb">mv</span> <span class="k">*</span>.pdf pdf
+<span class="nb">mv</span> <span class="k">*</span>.md writing
+
+</code></pre></div></div>
+
+<p>With thanks to <a href="https://learnbyexample.github.io/customizing-pandoc/" target="_blank">learnbyexample.github.io/customizing-pandoc/</a>, for helping to get me on the right track.</p>]]></content><author><name>Paul Dürnberger</name></author><category term="linux" /><category term="markdown" /><category term="bash" /><category term="pandoc" /><category term="pdf" /><category term="weasyprint" /><summary type="html"><![CDATA[Using pandoc and weasyprint to create a letter template.]]></summary></entry><entry><title type="html">For Loop</title><link href="http://localhost:4000/2022/04/19/for-loop/" rel="alternate" type="text/html" title="For Loop" /><published>2022-04-19T00:00:00+01:00</published><updated>2022-04-19T00:00:00+01:00</updated><id>http://localhost:4000/2022/04/19/for-loop</id><content type="html" xml:base="http://localhost:4000/2022/04/19/for-loop/"><![CDATA[<p>With the help of <code class="language-plaintext highlighter-rouge">Graphviz</code>, I have been creating a number of family trees for use on a family history website. The following is a simple script which, using a <code class="language-plaintext highlighter-rouge">for loop</code>, dispenses with the tedium of individually converting each <code class="language-plaintext highlighter-rouge">.dot</code> file into an <code class="language-plaintext highlighter-rouge">.svg</code> graphic.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">FOLDER</span><span class="o">=</span>/home/<span class="nv">$USER</span>/folder/where/files/located
+
+<span class="nb">cd</span> <span class="nv">$FOLDER</span> <span class="o">&amp;&amp;</span>
+
+<span class="k">for </span>file <span class="k">in</span> <span class="k">*</span>.dot<span class="p">;</span>
+  <span class="k">do
+    </span><span class="nv">STEM</span><span class="o">=</span><span class="si">$(</span><span class="nb">basename</span> <span class="nv">$file</span> .dot<span class="si">)</span>
+
+    dot <span class="nt">-Tsvg</span> <span class="nv">$file</span> <span class="nt">-o</span> <span class="nv">$STEM</span>.svg
+  <span class="k">done</span>
+</code></pre></div></div>
+
+<p>The script will look for any files with the <code class="language-plaintext highlighter-rouge">.dot</code> suffix in the designated folder. The <code class="language-plaintext highlighter-rouge">basename</code> command will then strip the <code class="language-plaintext highlighter-rouge">.dot</code> suffix from the file name.</p>
+
+<p>The final line is the command to convert the <code class="language-plaintext highlighter-rouge">.dot</code> files found into the <code class="language-plaintext highlighter-rouge">.svg</code> format, and save the converted files with the same file name as the source, but with an <code class="language-plaintext highlighter-rouge">svg</code> suffix.</p>]]></content><author><name>Paul Dürnberger</name></author><category term="linux" /><category term="bash" /><category term="loop" /><summary type="html"><![CDATA[A simple process to convert a batch of .dot diagrams into the .svg format using a for loop.]]></summary></entry><entry><title type="html">Superscript</title><link href="http://localhost:4000/2022/04/06/superscript/" rel="alternate" type="text/html" title="Superscript" /><published>2022-04-06T00:00:00+01:00</published><updated>2022-04-06T00:00:00+01:00</updated><id>http://localhost:4000/2022/04/06/superscript</id><content type="html" xml:base="http://localhost:4000/2022/04/06/superscript/"><![CDATA[<p>Imagine you’re writing about someone who is 5foot 9 and a quarter inches in height.</p>
+
+<p>Written numerically, 5’ 91/4”, which does not look right.</p>
+
+<p>To ensure the quarter displays correctly, type the following;</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>5' 9&lt;sup&gt;1&lt;/sup&gt;/&lt;sub&gt;4&lt;/sub&gt;"
+</code></pre></div></div>
+
+<p>The result looks like this: 5’ 9<sup>1</sup>/<sub>4</sub>”.</p>
+
+<p>A lot tidier!</p>]]></content><author><name>Paul Dürnberger</name></author><category term="markdown" /><category term="html" /><category term="subscript" /><category term="superscript" /><summary type="html"><![CDATA[How to use HTML to create sub- and superscript.]]></summary></entry><entry><title type="html">Pdfunite</title><link href="http://localhost:4000/2022/03/26/pdfunite/" rel="alternate" type="text/html" title="Pdfunite" /><published>2022-03-26T00:00:00+00:00</published><updated>2022-03-26T00:00:00+00:00</updated><id>http://localhost:4000/2022/03/26/pdfunite</id><content type="html" xml:base="http://localhost:4000/2022/03/26/pdfunite/"><![CDATA[<p>To convert several PDf’s into one PDF document, we can use <code class="language-plaintext highlighter-rouge">pdfunite</code>. This is a part of <code class="language-plaintext highlighter-rouge">poppler-utils</code>, which can be installed using the following command;</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt install poppler-utils
+</code></pre></div></div>
+
+<p>To merge the documents, run the following, changing the pdf file names as necessary;</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pdfunite 1.pdf 2.pdf 3.pdf output.pdf
+</code></pre></div></div>]]></content><author><name>Paul Dürnberger</name></author><category term="linux" /><category term="merge" /><category term="pdf" /><summary type="html"><![CDATA[How to merge several PDF's into one document.]]></summary></entry><entry><title type="html">Mutt Address Book</title><link href="http://localhost:4000/2022/02/18/mutt-address-book/" rel="alternate" type="text/html" title="Mutt Address Book" /><published>2022-02-18T00:00:00+00:00</published><updated>2022-02-18T00:00:00+00:00</updated><id>http://localhost:4000/2022/02/18/mutt-address-book</id><content type="html" xml:base="http://localhost:4000/2022/02/18/mutt-address-book/"><![CDATA[<p>Something I’ve been meaning to record since <a href="/2021/09/19/mutt-email">setting up the Mutt email client</a> was how I added an address book.</p>
+
+<p>The simplest option is to use Mutt’s alias file. Begin by creating a blank document, <code class="language-plaintext highlighter-rouge">~/.mutt/mutt-alias</code>.</p>
+
+<p>Next we amend <code class="language-plaintext highlighter-rouge">~/.mutt/muttrc</code> to include reference to the alias file, by adding the following;</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Address Book (using ~/.muttrc/mutt-alias)
+source ~/.mutt/mutt-alias
+set alias_file = "~/.mutt/mutt-alias"
+</code></pre></div></div>
+
+<p>Restart mutt, and highlight one of the messages in your inbox. Tap the letter <code class="language-plaintext highlighter-rouge">a</code> and at the bottom of the screen you will be asked what alias you want to assign to the sender of that email. Answer the subsequent questions, and save. The next time you want to email that person, at <code class="language-plaintext highlighter-rouge">To:</code> type in the alias you assigned.</p>]]></content><author><name>Paul Dürnberger</name></author><category term="linux" /><category term="addressbook" /><category term="email" /><category term="mutt" /><summary type="html"><![CDATA[An address book for the Mutt Email Client.]]></summary></entry><entry><title type="html">Doc To Txt</title><link href="http://localhost:4000/2022/02/15/doc-to-txt/" rel="alternate" type="text/html" title="Doc To Txt" /><published>2022-02-15T00:00:00+00:00</published><updated>2022-02-15T00:00:00+00:00</updated><id>http://localhost:4000/2022/02/15/doc-to-txt</id><content type="html" xml:base="http://localhost:4000/2022/02/15/doc-to-txt/"><![CDATA[<p>To convert a <em>.doc</em> document to a text file, we use <em>antiword</em>. First install it;</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt install antiword
+</code></pre></div></div>
+
+<p>To convert, run the following command:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>antiword file.doc &gt; file.txt
+</code></pre></div></div>
+
+<p>For <em>.docx</em> we need to use a different programme, <em>docx2txt</em>. First install it;</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get install docx2txt
+</code></pre></div></div>
+
+<p>To convert the document, run the command as follows;</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docx2txt file.docx file.txt
+</code></pre></div></div>]]></content><author><name>Paul Dürnberger</name></author><category term="linux" /><category term="convert" /><category term="document" /><summary type="html"><![CDATA[How to convert a .doc file to a .txt file]]></summary></entry><entry><title type="html">Img2pdf</title><link href="http://localhost:4000/2022/01/19/img2pdf/" rel="alternate" type="text/html" title="Img2pdf" /><published>2022-01-19T00:00:00+00:00</published><updated>2022-01-19T00:00:00+00:00</updated><id>http://localhost:4000/2022/01/19/img2pdf</id><content type="html" xml:base="http://localhost:4000/2022/01/19/img2pdf/"><![CDATA[<p>To convert a number of .jpg images into one PDF document, first install img2pdf</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt install img2pdf
+</code></pre></div></div>
+
+<p>To create the document, change to the directory in which the images are located, then run the following command:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>img2pdf 1.jpg 2.jpg 3.jpg -o output.pdf
+</code></pre></div></div>]]></content><author><name>Paul Dürnberger</name></author><category term="linux" /><category term="graphics" /><category term="pdf" /><summary type="html"><![CDATA[How to convert a number of .jpg images into one PDF document.]]></summary></entry><entry><title type="html">Format A Disk</title><link href="http://localhost:4000/2022/01/15/format-a-disk/" rel="alternate" type="text/html" title="Format A Disk" /><published>2022-01-15T00:00:00+00:00</published><updated>2022-01-15T00:00:00+00:00</updated><id>http://localhost:4000/2022/01/15/format-a-disk</id><content type="html" xml:base="http://localhost:4000/2022/01/15/format-a-disk/"><![CDATA[<p>Insert the disk and then, to identify the attached disks, type</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo fdisk -l
+</code></pre></div></div>
+
+<p>The USB device will be listed as <code class="language-plaintext highlighter-rouge">/dev/sdx</code> or similar, whilst the partition on it will be identified as <code class="language-plaintext highlighter-rouge">/dev/sdx1</code> or similar.</p>
+
+<p><strong>Ensure the correct partition is identified; the following action cannot be undone</strong></p>
+
+<p>Having ensured the correct disk has been identified, the partition can be formatted as FAT16 using this command;</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo mkfs -t fat /dev/sdx1
+</code></pre></div></div>]]></content><author><name>Paul Dürnberger</name></author><category term="linux" /><category term="disk" /><category term="format" /><summary type="html"><![CDATA[Format a USB drive]]></summary></entry></feed>

@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  <title>Technology</title>
+
+</head>
+
+
+  <body id="install a lightbox">
+
+    
+<header>
+  <div class="container-fluid">
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+
+  <h1 class="navbar-brand">Technology</h1>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+    <span class="navbar-toggler-icon"></span>
+
+  </button>
+
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+
+    <ul class="navbar-nav">
+
+      
+        <li class="nav-item">
+          <a class="nav-link" href="/">Archive</a>
+        </li>
+      
+        <li class="nav-item">
+          <a class="nav-link" href="/readme/">About</a>
+        </li>
+      
+
+    </ul>
+  </div>
+</nav>
+
+
+  </div><!-- End of container-fluid-->
+</header>
+
+
+    <main>
+
+      <div class="container-fluid">
+<div id="post">
+
+  <h2>Install a Lightbox</h2>
+
+  <p>
+    Category:
+    
+      <a class="category" href="/category/photography">Photography</a>
+    
+  </p>
+
+  <p class="excerpt">I wanted a way to better display the images on this web site, and decided to utilize Lightbox.</p>
+
+  <p>I wanted a way to better display the images on my photography web site, and decided to utilize a lightbox. The idea is that when one clicks on the thumbnail of an image, a large version of the image appears, sitting over the main page. The lightbox I used on was installed as follows.</p>
+
+<!--more-->
+
+<p>I am using Lightbox2, a very light JavaScript application. As described at the <a href="https://lokeshdhakar.com/projects/lightbox2/">Lightbox2 web site</a>, one first needs to download the zip of the latest release. If using Linux, the files can be downloaded using the command;</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install lightbox2 --save
+</code></pre></div></div>
+
+<p>If npm is not already installed on your system, use the following command to install it;</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get install npm
+</code></pre></div></div>
+
+<p>Having downloaded lightbox2, navigate to the <code class="language-plaintext highlighter-rouge">lightbox2/src</code> folder, where you will find three further folders, <code class="language-plaintext highlighter-rouge">css,images</code> and <code class="language-plaintext highlighter-rouge">js</code>.</p>
+
+<p>Now create a folder called lightbox within your web page structure (I have mine at /assets/lightbox). Copy the contents of <code class="language-plaintext highlighter-rouge">lightbox2/src</code> into the newly created folder.</p>
+
+<p>Within the <code class="language-plaintext highlighter-rouge">&lt;head&gt;</code> section of your web page, add a link to the <code class="language-plaintext highlighter-rouge">lightbox.css</code> file. In my case this is;</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"/assets/lightbox/css/lightbox.css"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>At the bottom of the web page, and immediately before the <code class="language-plaintext highlighter-rouge">&lt;/body&gt;</code> tag add a link to the <code class="language-plaintext highlighter-rouge">lightbox.js</code> file. In my case this is;</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"assets/lightbox/js/lightbox.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p>(My web site is built using Jekyll, and the above lines have been added to default.html).</p>
+
+<p>The script is written in javascript, and for the lightbox to work you need to ensure the jQuery JavaScript library is downloaded. You could use the one included in the lightbox2 download, but I prefer to use the edition supplied by Google via the Content Delivery Network (CDN). To implement it, add the following line to the <code class="language-plaintext highlighter-rouge">&lt;head&gt;</code> section of your web page at a point <em>before</em> the link to the lightbox stylesheet;</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p>Finally, to display the pictures, add <code class="language-plaintext highlighter-rouge">data-lightbox="[title]"</code> to the picture’s link. For a gallery ensure each picture in the set is assigned the same data-lightbox title. An example from my own web site is as follows;</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row g-1"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm-6"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/assets/images/2020-10-27/002.jpg"</span> <span class="na">data-lightbox=</span><span class="s">"gallery"</span> <span class="na">data-title=</span><span class="s">"My First Picture"</span><span class="nt">&gt;&lt;img</span> <span class="na">src=</span><span class="s">"/assets/images/2020-10-27/002.jpg"</span><span class="nt">&gt;&lt;/a&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm-6"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/assets/images/2020-10-27/003.jpg"</span> <span class="na">data-lightbox=</span><span class="s">"gallery"</span> <span class="na">data-title=</span><span class="s">"My Second Picture"</span><span class="nt">&gt;&lt;img</span> <span class="na">src=</span><span class="s">"/assets/images/2020-10-27/003.jpg"</span><span class="nt">&gt;&lt;/a&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span><span class="c">&lt;!--End of row--&gt;</span>
+
+</code></pre></div></div>
+
+<p>Now to test your work. Click on the pictures to see the effect. Rather professional looking, and well worth the effort!</p>
+
+
+  <p>
+    Tagged:
+    
+      <a class="hashtags" href="/tag/html">#html</a>
+    
+      <a class="hashtags" href="/tag/liquid">#liquid</a>
+    
+      <a class="hashtags" href="/tag/website">#website</a>
+    
+  </p>
+
+  <p class="published">
+    3 November 2020
+  </p>
+
+</div><!--End of #post-->
+</div><!-- End of container-fluid-->
+
+
+    </main>
+
+    <footer>
+  <div class="container-fluid">
+
+    <small>
+
+      <p class="social-media">
+
+  <!--
+  Links to social media sites. Make changes to the list at _data/social.yml
+  -->
+  Social Media: 
+
+     | <a href="https://durnbergerphotography.com" target="_blank">Portfolio</a>
+
+  
+
+     | <a href="https://www.behance.net/durnberger" target="_blank">Behance</a> | 
+
+  
+
+    <a href="https://twitter.com/paul_durnberger" target="_blank">Twitter</a> | 
+
+  
+
+</p><!--End of social-media-->
+
+
+      <p>This site was built with <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> and <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a></p>
+
+      <p>Copyright ©Paul Dürnberger</p>
+
+    </small>
+
+  <nav class="navbar navbar-expand navbar-light">
+
+  <div class="navbar-nav ">
+
+    
+
+      <a class="nav-item nav-link" href="/"> Archive </a>
+
+    
+
+      <a class="nav-item nav-link" href="/readme/"> About </a>
+
+    
+
+  </div>
+
+</nav>
+
+
+  </div>
+</footer>
+
+
+    <!--Required by Bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  </body>
+
+</html>

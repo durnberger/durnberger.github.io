@@ -1,0 +1,12 @@
+<p class="social-media">
+
+  <!--
+  Links to social media sites. Make changes to the list at _data/social.yml
+  -->
+  Social Media: {% for item in site.data.social %}
+
+    {% unless forloop.last %} | {% endunless %}<a href="{{item.link}}" target="_blank">{{ item.name }}</a>{% unless forloop.first %} | {% endunless %}
+
+  {% endfor %}
+
+</p><!--End of social-media-->
