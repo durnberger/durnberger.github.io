@@ -2,6 +2,17 @@
 layout: page
 permalink: /
 ---
+
+Welcome to My Home Page
+
+{% assign date = '2020-04-13T10:20:00Z' %}
+
+- Original date - {{ date }}
+- With timeago filter - {{ date | timeago }}
+
+
+
+
 <div id="archive">
 
   <h2>Archive</h2>
