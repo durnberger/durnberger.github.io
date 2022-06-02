@@ -30,37 +30,6 @@ kramdown:
   input: GFM
   syntax_highlighter: rouge
 
-# Plugin: Pagination (jekyll-paginate-v2)
-pagination:
-  enabled: true
-  per_page: 8
-  permalink: '/page:num/'
-  title: ':title-page :num'
-  limit: 0
-  sort_field: 'date'
-  sort_reverse: true
-
-# Plugin: Auto Pages (jekyll-paginate-v2)
-autopages:
-  enabled: true
-
-  collections:
-    enabled: false
-
-  categories:
-    enabled: true
-    layouts:
-      - 'category.html'
-    title: ":category"
-    path: "/category/:category"
-
-  tags:
-    enabled: true
-    layouts:
-      - 'tag.html'
-    title: ':tag'
-    path: '/tag/:tag'
-
 # Excerpt Separator
 excerpt_separator: <!--more-->
 

@@ -1,7 +1,6 @@
 ---
 layout: post
-categories:
-  - linux
+categories: linux
 tags:
   - addressbook
   - email

@@ -6,6 +6,13 @@ layout: default
 
     <h2>{{ page.title }}</h2>
 
+    <p>
+      Category:
+      {% for category in page.categories %}
+        <a class="category" href="/categories/{{ category }}">{{ category | capitalize }}</a>
+      {% endfor %}
+    </p>
+
     {{ content }}
 
     <p class="published">
@@ -13,4 +20,5 @@ layout: default
     </p>
 
   </div><!--End of #post-->
+
 </div><!-- End of container-fluid-->

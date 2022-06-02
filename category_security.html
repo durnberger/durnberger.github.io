@@ -1,0 +1,16 @@
+---
+layout: page
+permalink: /categories/security/
+title: Security
+---
+
+<h2>CATEGORY: Security</h2>
+
+<ul>
+  {% for post in site.categories.security %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+      <p class="excerpt">{{ post.excerpt }}</p>
+    </li>
+  {% endfor %}
+</ul>

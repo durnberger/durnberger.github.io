@@ -1,0 +1,16 @@
+---
+layout: page
+permalink: /categories/markdown/
+title: Markdown
+---
+
+<h2>CATEGORY: Markdown</h2>
+
+<ul>
+  {% for post in site.categories.markdown %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+      <p class="excerpt">{{ post.excerpt }}</p>
+    </li>
+  {% endfor %}
+</ul>
