@@ -3,9 +3,14 @@ layout: post
 categories: jekyll
 tags: [graphics, mermaid]
 
-image:
+image1:
   - file_path: /assets/graphics/2021-12-21-mermaid1.png
     caption: Mermaid Graphic
+    cols: col-12
+
+image2:
+  - file_path: /assets/graphics/2021-12-21-mermaid2.png
+    caption: Flyout Panel
     cols: col-12
 
 ---
@@ -47,8 +52,7 @@ graph TD
 
 Having saved the document, and once the project has finished rebuilding, you will have a graph that looks something like this;
 
-  {% include images.html content=image %}
-
+{% include images.html content=page.image1 %}
 
 
 Impressive. A *family tree* layout any genealogist would find useful!
@@ -71,9 +75,9 @@ graph TD
 
 Right click on the code, and from the fly out panel, click on `mermaid preview`. Run the mouse over to the preview produced and again right click, and this time either `Save as PNG` or `Save as SVG`.
 
-<div class="thumbnail">
-  <img src="/assets/graphics/2021-12-21-mermaid2.png">
-</div>
+
+{% include images.html content=page.image2 %}
+
 
 You will be asked where to save the image (in my case they go into `/assets/media/graphics`). The image is now ready to be used.
 
