@@ -6,10 +6,12 @@ categories:
 tags:
   - nano
   - syntax
-excerpt:
-  Syntax highlighting for markdown files in nano
 
 ---
+Syntax highlighting for markdown files in nano.
+
+<!--more-->
+
 This post explains how to add syntax highlighting for markdown files in nano.
 
 Referring to the file `~/.nanorc`, ensure the line `include "/usr/share/nano/*.nanorc"` is uncommented.

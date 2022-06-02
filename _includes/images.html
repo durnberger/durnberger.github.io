@@ -1,0 +1,19 @@
+<div id="images">
+  <div class="row g-1">
+
+    {% for item in include.content %}
+
+      <div class="{{ item.cols }} image-block">
+
+        <img src="{{ item.file_path }}" class="img-fluid img-thumbnail" alt="{{ item.caption }}">}">
+
+        <div class="caption">
+          <p>{{ item.caption }}</p>
+        </div>
+
+      </div><!--End of col-*-->
+
+    {% endfor %}
+
+  </div><!--End of row-->
+</div><!--End of #images-->

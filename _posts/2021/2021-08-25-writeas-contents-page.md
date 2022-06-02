@@ -5,12 +5,12 @@ categories:
 tags:
   - theme
   - writeas
-excerpt:
-  How I created a contents page for my *write.as* blog.
 
 ---
 
 How I created a contents page for my *write.as* blog.
+
+<!--more-->
 
 I tend to write my posts using the [Atom text editor](https://atom.io/), before then copying the completed work into *write.as*.
 

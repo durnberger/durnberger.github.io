@@ -2,10 +2,11 @@
 layout: post
 categories: linux
 tags: [disk, format]
-excerpt:
-  Format a USB drive
 
 ---
+Format a USB drive
+
+<!--more-->
 
 Insert the disk and then, to identify the attached disks, type
 

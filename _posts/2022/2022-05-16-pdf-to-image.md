@@ -2,10 +2,11 @@
 layout: post
 categories: [linux]
 tags: [jpeg, pdf, png]
-excerpt:
-  Convert a PDF into image file(s).
 
 ---
+How to convert a PDF into image file(s).
+
+<!--more-->
 
 This can be achieved using `pdftoppm`, a part of the `poppler-utils` package.
 

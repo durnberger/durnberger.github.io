@@ -1,4 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-06-02T16:55:13+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Technology</title><subtitle>I write about Linux and Ubuntu, and the FOSS tools available to photographers</subtitle><author><name>Paul Dürnberger</name></author><entry><title type="html">Compton</title><link href="http://localhost:4000/2022/05/31/compton/" rel="alternate" type="text/html" title="Compton" /><published>2022-05-31T00:00:00+01:00</published><updated>2022-05-31T00:00:00+01:00</updated><id>http://localhost:4000/2022/05/31/compton</id><content type="html" xml:base="http://localhost:4000/2022/05/31/compton/"><![CDATA[<p>As <a href="https://www.maketecheasier.com/speed-up-linux-desktop-with-compton/" target="_blank">www.maketecheasier.com</a> explain, <em>Compton is a super-lightweight standalone compositor designed to be used in conjunction with Linux desktops. Perfect for older hardware, it is often used by lightweight distros that need a compositor that won’t sacrifice speed and responsiveness</em>.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-06-02T19:18:41+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Technology</title><subtitle>I write about Linux and Ubuntu, and the FOSS tools available to photographers</subtitle><author><name>Paul Dürnberger</name></author><entry><title type="html">Compton</title><link href="http://localhost:4000/2022/05/31/compton/" rel="alternate" type="text/html" title="Compton" /><published>2022-05-31T00:00:00+01:00</published><updated>2022-05-31T00:00:00+01:00</updated><id>http://localhost:4000/2022/05/31/compton</id><content type="html" xml:base="http://localhost:4000/2022/05/31/compton/"><![CDATA[<p>Compton. A screen compositor that won’t sacrifice speed and responsiveness</p>
+
+<!--more-->
+
+<p>As <a href="https://www.maketecheasier.com/speed-up-linux-desktop-with-compton/" target="_blank">www.maketecheasier.com</a> explain, <em>Compton is a super-lightweight standalone compositor designed to be used in conjunction with Linux desktops. Perfect for older hardware, it is often used by lightweight distros that need a compositor that won’t sacrifice speed and responsiveness</em>.</p>
 
 <p>On a Ubuntu based system, installing Compton is as easy as;</p>
 
@@ -7,7 +11,11 @@
 
 <p>If like me, you wouldn’t know where to start to create the config file, you might also want to install <code class="language-plaintext highlighter-rouge">compton-conf</code>, which provides a user friendly GUI with which to generate the necessasry config file. The file will be saved to <code class="language-plaintext highlighter-rouge">~/.config/compton.conf</code>.</p>
 
-<p>An alternative is to use one of the config files made available by some of the generous souls at <a href="https://gist.github.com/starred" target="_blank">Github Gist</a>. I am presently using one created by <a href="https://gist.github.com/namdinh95" target="_blank">Nam Dinh</a>, which you can find <a href="https://gist.github.com/namdinh95/d820519782b7287a3392fc2f4e210d8e" target="_blank">here</a>. It is working a treat on my machine.</p>]]></content><author><name>Paul Dürnberger</name></author><category term="linux" /><category term="compositor" /><category term="compton" /><category term="screen" /><summary type="html"><![CDATA[Compton. A screen compositor that won’t sacrifice speed and responsiveness]]></summary></entry><entry><title type="html">Pdf To Image</title><link href="http://localhost:4000/2022/05/16/pdf-to-image/" rel="alternate" type="text/html" title="Pdf To Image" /><published>2022-05-16T00:00:00+01:00</published><updated>2022-05-16T00:00:00+01:00</updated><id>http://localhost:4000/2022/05/16/pdf-to-image</id><content type="html" xml:base="http://localhost:4000/2022/05/16/pdf-to-image/"><![CDATA[<p>This can be achieved using <code class="language-plaintext highlighter-rouge">pdftoppm</code>, a part of the <code class="language-plaintext highlighter-rouge">poppler-utils</code> package.</p>
+<p>An alternative is to use one of the config files made available by some of the generous souls at <a href="https://gist.github.com/starred" target="_blank">Github Gist</a>. I am presently using one created by <a href="https://gist.github.com/namdinh95" target="_blank">Nam Dinh</a>, which you can find <a href="https://gist.github.com/namdinh95/d820519782b7287a3392fc2f4e210d8e" target="_blank">here</a>. It is working a treat on my machine.</p>]]></content><author><name>Paul Dürnberger</name></author><category term="linux" /><category term="compositor" /><category term="compton" /><category term="screen" /><summary type="html"><![CDATA[Compton. A screen compositor that won’t sacrifice speed and responsiveness]]></summary></entry><entry><title type="html">Pdf To Image</title><link href="http://localhost:4000/2022/05/16/pdf-to-image/" rel="alternate" type="text/html" title="Pdf To Image" /><published>2022-05-16T00:00:00+01:00</published><updated>2022-05-16T00:00:00+01:00</updated><id>http://localhost:4000/2022/05/16/pdf-to-image</id><content type="html" xml:base="http://localhost:4000/2022/05/16/pdf-to-image/"><![CDATA[<p>How to convert a PDF into image file(s).</p>
+
+<!--more-->
+
+<p>This can be achieved using <code class="language-plaintext highlighter-rouge">pdftoppm</code>, a part of the <code class="language-plaintext highlighter-rouge">poppler-utils</code> package.</p>
 
 <p>To convert a PDF to a PNG:</p>
 
@@ -19,7 +27,11 @@
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pdftoppm input.pdf outputname -jpeg
 
-</code></pre></div></div>]]></content><author><name>Paul Dürnberger</name></author><category term="linux" /><category term="jpeg" /><category term="pdf" /><category term="png" /><summary type="html"><![CDATA[Convert a PDF into image file(s).]]></summary></entry><entry><title type="html">Pandoc</title><link href="http://localhost:4000/2022/05/05/pandoc/" rel="alternate" type="text/html" title="Pandoc" /><published>2022-05-05T00:00:00+01:00</published><updated>2022-05-05T00:00:00+01:00</updated><id>http://localhost:4000/2022/05/05/pandoc</id><content type="html" xml:base="http://localhost:4000/2022/05/05/pandoc/"><![CDATA[<h3 id="directories">Directories</h3>
+</code></pre></div></div>]]></content><author><name>Paul Dürnberger</name></author><category term="linux" /><category term="jpeg" /><category term="pdf" /><category term="png" /><summary type="html"><![CDATA[How to convert a PDF into image file(s).]]></summary></entry><entry><title type="html">Pandoc</title><link href="http://localhost:4000/2022/05/05/pandoc/" rel="alternate" type="text/html" title="Pandoc" /><published>2022-05-05T00:00:00+01:00</published><updated>2022-05-05T00:00:00+01:00</updated><id>http://localhost:4000/2022/05/05/pandoc</id><content type="html" xml:base="http://localhost:4000/2022/05/05/pandoc/"><![CDATA[<p>Using pandoc and weasyprint to create a letter template.</p>
+
+<!--more-->
+
+<h3 id="directories">Directories</h3>
 <p>Within my <code class="language-plaintext highlighter-rouge">documents</code> directory, I have 2 further directories, <code class="language-plaintext highlighter-rouge">layout</code> and <code class="language-plaintext highlighter-rouge">style</code>.</p>
 
 <p>Layout contains <code class="language-plaintext highlighter-rouge">header.html</code> and <code class="language-plaintext highlighter-rouge">footer.html</code>.</p>
@@ -232,7 +244,11 @@ pandoc  <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</s
 
 </code></pre></div></div>
 
-<p>With thanks to <a href="https://learnbyexample.github.io/customizing-pandoc/" target="_blank">learnbyexample.github.io/customizing-pandoc/</a>, for helping to get me on the right track.</p>]]></content><author><name>Paul Dürnberger</name></author><category term="linux" /><category term="bash" /><category term="pandoc" /><category term="pdf" /><category term="weasyprint" /><summary type="html"><![CDATA[Using pandoc and weasyprint to create a letter template.]]></summary></entry><entry><title type="html">For Loop</title><link href="http://localhost:4000/2022/04/19/for-loop/" rel="alternate" type="text/html" title="For Loop" /><published>2022-04-19T00:00:00+01:00</published><updated>2022-04-19T00:00:00+01:00</updated><id>http://localhost:4000/2022/04/19/for-loop</id><content type="html" xml:base="http://localhost:4000/2022/04/19/for-loop/"><![CDATA[<p>With the help of <code class="language-plaintext highlighter-rouge">Graphviz</code>, I have been creating a number of family trees for use on a family history website. The following is a simple script which, using a <code class="language-plaintext highlighter-rouge">for loop</code>, dispenses with the tedium of individually converting each <code class="language-plaintext highlighter-rouge">.dot</code> file into an <code class="language-plaintext highlighter-rouge">.svg</code> graphic.</p>
+<p>With thanks to <a href="https://learnbyexample.github.io/customizing-pandoc/" target="_blank">learnbyexample.github.io/customizing-pandoc/</a>, for helping to get me on the right track.</p>]]></content><author><name>Paul Dürnberger</name></author><category term="linux" /><category term="bash" /><category term="pandoc" /><category term="pdf" /><category term="weasyprint" /><summary type="html"><![CDATA[Using pandoc and weasyprint to create a letter template.]]></summary></entry><entry><title type="html">For Loop</title><link href="http://localhost:4000/2022/04/19/for-loop/" rel="alternate" type="text/html" title="For Loop" /><published>2022-04-19T00:00:00+01:00</published><updated>2022-04-19T00:00:00+01:00</updated><id>http://localhost:4000/2022/04/19/for-loop</id><content type="html" xml:base="http://localhost:4000/2022/04/19/for-loop/"><![CDATA[<p>A simple process to convert a batch of .dot diagrams into the .svg format using a for loop.</p>
+
+<!--more-->
+
+<p>With the help of <code class="language-plaintext highlighter-rouge">Graphviz</code>, I have been creating a number of family trees for use on a family history website. The following is a simple script which, using a <code class="language-plaintext highlighter-rouge">for loop</code>, dispenses with the tedium of individually converting each <code class="language-plaintext highlighter-rouge">.dot</code> file into an <code class="language-plaintext highlighter-rouge">.svg</code> graphic.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">FOLDER</span><span class="o">=</span>/home/<span class="nv">$USER</span>/folder/where/files/located
 
@@ -248,7 +264,11 @@ pandoc  <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</s
 
 <p>The script will look for any files with the <code class="language-plaintext highlighter-rouge">.dot</code> suffix in the designated folder. The <code class="language-plaintext highlighter-rouge">basename</code> command will then strip the <code class="language-plaintext highlighter-rouge">.dot</code> suffix from the file name.</p>
 
-<p>The final line is the command to convert the <code class="language-plaintext highlighter-rouge">.dot</code> files found into the <code class="language-plaintext highlighter-rouge">.svg</code> format, and save the converted files with the same file name as the source, but with an <code class="language-plaintext highlighter-rouge">svg</code> suffix.</p>]]></content><author><name>Paul Dürnberger</name></author><category term="linux" /><category term="bash" /><category term="loop" /><summary type="html"><![CDATA[A simple process to convert a batch of .dot diagrams into the .svg format using a for loop.]]></summary></entry><entry><title type="html">Superscript</title><link href="http://localhost:4000/2022/04/06/superscript/" rel="alternate" type="text/html" title="Superscript" /><published>2022-04-06T00:00:00+01:00</published><updated>2022-04-06T00:00:00+01:00</updated><id>http://localhost:4000/2022/04/06/superscript</id><content type="html" xml:base="http://localhost:4000/2022/04/06/superscript/"><![CDATA[<p>Imagine you’re writing about someone who is 5foot 9 and a quarter inches in height.</p>
+<p>The final line is the command to convert the <code class="language-plaintext highlighter-rouge">.dot</code> files found into the <code class="language-plaintext highlighter-rouge">.svg</code> format, and save the converted files with the same file name as the source, but with an <code class="language-plaintext highlighter-rouge">svg</code> suffix.</p>]]></content><author><name>Paul Dürnberger</name></author><category term="linux" /><category term="bash" /><category term="loop" /><summary type="html"><![CDATA[A simple process to convert a batch of .dot diagrams into the .svg format using a for loop.]]></summary></entry><entry><title type="html">Superscript</title><link href="http://localhost:4000/2022/04/06/superscript/" rel="alternate" type="text/html" title="Superscript" /><published>2022-04-06T00:00:00+01:00</published><updated>2022-04-06T00:00:00+01:00</updated><id>http://localhost:4000/2022/04/06/superscript</id><content type="html" xml:base="http://localhost:4000/2022/04/06/superscript/"><![CDATA[<p>How to use HTML to create sub- and superscript.</p>
+
+<!--more-->
+
+<p>Imagine you’re writing about someone who is 5foot 9 and a quarter inches in height.</p>
 
 <p>Written numerically, 5’ 91/4”, which does not look right.</p>
 
@@ -259,7 +279,11 @@ pandoc  <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</s
 
 <p>The result looks like this: 5’ 9<sup>1</sup>/<sub>4</sub>”.</p>
 
-<p>A lot tidier!</p>]]></content><author><name>Paul Dürnberger</name></author><category term="markdown" /><category term="html" /><category term="subscript" /><category term="superscript" /><summary type="html"><![CDATA[How to use HTML to create sub- and superscript.]]></summary></entry><entry><title type="html">Pdfunite</title><link href="http://localhost:4000/2022/03/26/pdfunite/" rel="alternate" type="text/html" title="Pdfunite" /><published>2022-03-26T00:00:00+00:00</published><updated>2022-03-26T00:00:00+00:00</updated><id>http://localhost:4000/2022/03/26/pdfunite</id><content type="html" xml:base="http://localhost:4000/2022/03/26/pdfunite/"><![CDATA[<p>To convert several PDf’s into one PDF document, we can use <code class="language-plaintext highlighter-rouge">pdfunite</code>. This is a part of <code class="language-plaintext highlighter-rouge">poppler-utils</code>, which can be installed using the following command;</p>
+<p>A lot tidier!</p>]]></content><author><name>Paul Dürnberger</name></author><category term="markdown" /><category term="html" /><category term="subscript" /><category term="superscript" /><summary type="html"><![CDATA[How to use HTML to create sub- and superscript.]]></summary></entry><entry><title type="html">Pdfunite</title><link href="http://localhost:4000/2022/03/26/pdfunite/" rel="alternate" type="text/html" title="Pdfunite" /><published>2022-03-26T00:00:00+00:00</published><updated>2022-03-26T00:00:00+00:00</updated><id>http://localhost:4000/2022/03/26/pdfunite</id><content type="html" xml:base="http://localhost:4000/2022/03/26/pdfunite/"><![CDATA[<p>How to merge several PDF’s into one document.</p>
+
+<!--more-->
+
+<p>To convert several PDf’s into one PDF document, we can use <code class="language-plaintext highlighter-rouge">pdfunite</code>. This is a part of <code class="language-plaintext highlighter-rouge">poppler-utils</code>, which can be installed using the following command;</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt install poppler-utils
 </code></pre></div></div>
@@ -267,7 +291,11 @@ pandoc  <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</s
 <p>To merge the documents, run the following, changing the pdf file names as necessary;</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pdfunite 1.pdf 2.pdf 3.pdf output.pdf
-</code></pre></div></div>]]></content><author><name>Paul Dürnberger</name></author><category term="linux" /><category term="merge" /><category term="pdf" /><summary type="html"><![CDATA[How to merge several PDF's into one document.]]></summary></entry><entry><title type="html">Mutt Address Book</title><link href="http://localhost:4000/2022/02/18/mutt-address-book/" rel="alternate" type="text/html" title="Mutt Address Book" /><published>2022-02-18T00:00:00+00:00</published><updated>2022-02-18T00:00:00+00:00</updated><id>http://localhost:4000/2022/02/18/mutt-address-book</id><content type="html" xml:base="http://localhost:4000/2022/02/18/mutt-address-book/"><![CDATA[<p>Something I’ve been meaning to record since <a href="/2021/09/19/mutt-email">setting up the Mutt email client</a> was how I added an address book.</p>
+</code></pre></div></div>]]></content><author><name>Paul Dürnberger</name></author><category term="linux" /><category term="merge" /><category term="pdf" /><summary type="html"><![CDATA[How to merge several PDF’s into one document.]]></summary></entry><entry><title type="html">Mutt Address Book</title><link href="http://localhost:4000/2022/02/18/mutt-address-book/" rel="alternate" type="text/html" title="Mutt Address Book" /><published>2022-02-18T00:00:00+00:00</published><updated>2022-02-18T00:00:00+00:00</updated><id>http://localhost:4000/2022/02/18/mutt-address-book</id><content type="html" xml:base="http://localhost:4000/2022/02/18/mutt-address-book/"><![CDATA[<p>An address book for the Mutt Email Client.</p>
+
+<!--more-->
+
+<p>Something I’ve been meaning to record since <a href="/2021/09/19/mutt-email">setting up the Mutt email client</a> was how I added an address book.</p>
 
 <p>The simplest option is to use Mutt’s alias file. Begin by creating a blank document, <code class="language-plaintext highlighter-rouge">~/.mutt/mutt-alias</code>.</p>
 
@@ -278,7 +306,11 @@ source ~/.mutt/mutt-alias
 set alias_file = "~/.mutt/mutt-alias"
 </code></pre></div></div>
 
-<p>Restart mutt, and highlight one of the messages in your inbox. Tap the letter <code class="language-plaintext highlighter-rouge">a</code> and at the bottom of the screen you will be asked what alias you want to assign to the sender of that email. Answer the subsequent questions, and save. The next time you want to email that person, at <code class="language-plaintext highlighter-rouge">To:</code> type in the alias you assigned.</p>]]></content><author><name>Paul Dürnberger</name></author><category term="linux" /><category term="addressbook" /><category term="email" /><category term="mutt" /><summary type="html"><![CDATA[An address book for the Mutt Email Client.]]></summary></entry><entry><title type="html">Doc To Txt</title><link href="http://localhost:4000/2022/02/15/doc-to-txt/" rel="alternate" type="text/html" title="Doc To Txt" /><published>2022-02-15T00:00:00+00:00</published><updated>2022-02-15T00:00:00+00:00</updated><id>http://localhost:4000/2022/02/15/doc-to-txt</id><content type="html" xml:base="http://localhost:4000/2022/02/15/doc-to-txt/"><![CDATA[<p>To convert a <em>.doc</em> document to a text file, we use <em>antiword</em>. First install it;</p>
+<p>Restart mutt, and highlight one of the messages in your inbox. Tap the letter <code class="language-plaintext highlighter-rouge">a</code> and at the bottom of the screen you will be asked what alias you want to assign to the sender of that email. Answer the subsequent questions, and save. The next time you want to email that person, at <code class="language-plaintext highlighter-rouge">To:</code> type in the alias you assigned.</p>]]></content><author><name>Paul Dürnberger</name></author><category term="linux" /><category term="addressbook" /><category term="email" /><category term="mutt" /><summary type="html"><![CDATA[An address book for the Mutt Email Client.]]></summary></entry><entry><title type="html">Doc To Txt</title><link href="http://localhost:4000/2022/02/15/doc-to-txt/" rel="alternate" type="text/html" title="Doc To Txt" /><published>2022-02-15T00:00:00+00:00</published><updated>2022-02-15T00:00:00+00:00</updated><id>http://localhost:4000/2022/02/15/doc-to-txt</id><content type="html" xml:base="http://localhost:4000/2022/02/15/doc-to-txt/"><![CDATA[<p>Convert a .doc file to a .txt file</p>
+
+<!--more-->
+
+<p>To convert a <em>.doc</em> document to a text file, we use <em>antiword</em>. First install it;</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt install antiword
 </code></pre></div></div>
@@ -296,7 +328,11 @@ set alias_file = "~/.mutt/mutt-alias"
 <p>To convert the document, run the command as follows;</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docx2txt file.docx file.txt
-</code></pre></div></div>]]></content><author><name>Paul Dürnberger</name></author><category term="linux" /><category term="convert" /><category term="document" /><summary type="html"><![CDATA[How to convert a .doc file to a .txt file]]></summary></entry><entry><title type="html">Img2pdf</title><link href="http://localhost:4000/2022/01/19/img2pdf/" rel="alternate" type="text/html" title="Img2pdf" /><published>2022-01-19T00:00:00+00:00</published><updated>2022-01-19T00:00:00+00:00</updated><id>http://localhost:4000/2022/01/19/img2pdf</id><content type="html" xml:base="http://localhost:4000/2022/01/19/img2pdf/"><![CDATA[<p>To convert a number of .jpg images into one PDF document, first install img2pdf</p>
+</code></pre></div></div>]]></content><author><name>Paul Dürnberger</name></author><category term="linux" /><category term="convert" /><category term="document" /><summary type="html"><![CDATA[Convert a .doc file to a .txt file]]></summary></entry><entry><title type="html">Img2pdf</title><link href="http://localhost:4000/2022/01/19/img2pdf/" rel="alternate" type="text/html" title="Img2pdf" /><published>2022-01-19T00:00:00+00:00</published><updated>2022-01-19T00:00:00+00:00</updated><id>http://localhost:4000/2022/01/19/img2pdf</id><content type="html" xml:base="http://localhost:4000/2022/01/19/img2pdf/"><![CDATA[<p>How to convert a number of .jpg images into one PDF document.</p>
+
+<!--more-->
+
+<p>To convert a number of .jpg images into one PDF document, first install img2pdf</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt install img2pdf
 </code></pre></div></div>
@@ -304,7 +340,11 @@ set alias_file = "~/.mutt/mutt-alias"
 <p>To create the document, change to the directory in which the images are located, then run the following command:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>img2pdf 1.jpg 2.jpg 3.jpg -o output.pdf
-</code></pre></div></div>]]></content><author><name>Paul Dürnberger</name></author><category term="linux" /><category term="graphics" /><category term="pdf" /><summary type="html"><![CDATA[How to convert a number of .jpg images into one PDF document.]]></summary></entry><entry><title type="html">Format A Disk</title><link href="http://localhost:4000/2022/01/15/format-a-disk/" rel="alternate" type="text/html" title="Format A Disk" /><published>2022-01-15T00:00:00+00:00</published><updated>2022-01-15T00:00:00+00:00</updated><id>http://localhost:4000/2022/01/15/format-a-disk</id><content type="html" xml:base="http://localhost:4000/2022/01/15/format-a-disk/"><![CDATA[<p>Insert the disk and then, to identify the attached disks, type</p>
+</code></pre></div></div>]]></content><author><name>Paul Dürnberger</name></author><category term="linux" /><category term="graphics" /><category term="pdf" /><summary type="html"><![CDATA[How to convert a number of .jpg images into one PDF document.]]></summary></entry><entry><title type="html">Format A Disk</title><link href="http://localhost:4000/2022/01/15/format-a-disk/" rel="alternate" type="text/html" title="Format A Disk" /><published>2022-01-15T00:00:00+00:00</published><updated>2022-01-15T00:00:00+00:00</updated><id>http://localhost:4000/2022/01/15/format-a-disk</id><content type="html" xml:base="http://localhost:4000/2022/01/15/format-a-disk/"><![CDATA[<p>Format a USB drive</p>
+
+<!--more-->
+
+<p>Insert the disk and then, to identify the attached disks, type</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo fdisk -l
 </code></pre></div></div>

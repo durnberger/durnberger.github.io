@@ -4,11 +4,12 @@ title: Resizing Images
 date: 2020-11-06
 categories: photography
 tags: [graphics, website, resizing, imagemagick]
-excerpt:
-  A short guide explaining how to resize images prior to using them on a web page.
+
 ---
 
 A short guide explaining how to resize images prior to using them on a web page.
+
+<!--more-->
 
 I have found the best solution on a Linux/Ubuntu system is ImageMagick. This is a command line utility, but don't let that put you off. For basic resizing it is simple to use.
 

@@ -2,8 +2,11 @@
 layout: post
 categories: linux
 tags: [antix, installation]
-excerpt: Installing AntiX on a rather old laptop.
+
 ---
+Installing AntiX on a rather old laptop.
+
+<!--more-->
 
 ### Contents
 {% include toc.html %}

@@ -71,7 +71,11 @@
       
     </p>
 
-    <p>I wanted to display a gallery of old family photographs on my genealogy website. I have come up with two solutions, detailed below.</p>
+    <p>How to create galleries for your Jekyll project.</p>
+
+<!--more-->
+
+<p>I wanted to display a gallery of old family photographs on my genealogy website. I have come up with two solutions, detailed below.</p>
 
 <p>I utilise Bootstrap. The code detailed below includes reference to Bootstrap elements; those elements can be removed without affecting the basic functionality of these solutions.</p>
 
@@ -110,6 +114,7 @@ album: family
 cols: 'col-sm-4'
 ---
 </code></pre></div></div>
+
 <p>Within the body of the post, and at the point where you want the gallery to appear add the following;</p>
 
 <div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span>gallery.html<span class="w"> </span><span class="na">folder</span><span class="o">=</span><span class="s2">"family"</span><span class="w"> </span><span class="p">%}</span>

@@ -10,12 +10,18 @@ footer {
   margin: 0 auto;
 }
 
+header {
+  padding-top: 1rem;
+  margin-bottom: 1.25rem;
+  border-bottom: solid 1px $gray-500;
+}
+
 h1, h1.navbar-brand {
   font-size: 1.75rem;
 }
 
 h2, h3, h4, h5, h6 {
-  padding-top: 1.75rem;
+  padding-top: 1.2rem;
 }
 
 h2 {
@@ -46,6 +52,14 @@ footer {
   width: 100%;
   text-align: center;
   padding-top: 1rem;
+}
+
+pre {
+  padding: 5px;
+}
+
+img {
+  width: 100%;
 }
 
 #archive {

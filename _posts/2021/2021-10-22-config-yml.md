@@ -2,9 +2,11 @@
 layout: post
 categories: jekyll
 tags: [configuration]
-excerpt:
-  An example of the `_config.yml` file as used within a Jekyll configuration.
+
 ---
+An example of a `_config.yml` file as used within a Jekyll configuration.
+
+<!--more-->
 
 When using the *Jekyll Static Site Generator*, it is essential for `_config.yml` to be properly configured. The example below worked for me, and I leave it here just in case it provides some assistance to anyone struggling to get their own project up and running.
 

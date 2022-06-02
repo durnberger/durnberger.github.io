@@ -4,10 +4,13 @@ title: Markdown Editor Review
 date: 2021-05-18
 categories: markdown
 tags: [atom, packages]
-excerpt:
-  Having used the Atom editor for some months now, it is apparent there are some packages I no longer need.
+
 ---
-Having used the Atom editor for some months now, it is apparent there are some packages I no longer need. I have also discovered additional packages that make the editing process altogether more efficient.
+Having used the Atom editor for some months now, it is apparent there are some packages I no longer need.
+
+<!--more-->
+
+I have also discovered additional packages that make the editing process altogether more efficient.
 
 I have removed;
 1. Markdown-writer by zhuochun

@@ -5,10 +5,11 @@ tags:
   - addressbook
   - email
   - mutt
-excerpt:
-  An address book for the Mutt Email Client.
 
 ---
+An address book for the Mutt Email Client.
+
+<!--more-->
 
 Something I've been meaning to record since [setting up the Mutt email client](/2021/09/19/mutt-email) was how I added an address book.
 

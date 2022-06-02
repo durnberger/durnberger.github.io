@@ -4,9 +4,12 @@ title: Archive Page
 date: 2021-03-03
 categories: jekyll
 tags: [archives, categories, liquid, tags]
-excerpt:
-  Learn how I modified my archive page, so that now all posts are listed according to the year and month of publication.
+
 ---
+How to create an archive page that lists all posts according to the year and month of publication.
+
+<!--more-->
+
 I have modified my archive page, so that now all posts are listed according to the year and month of publication. In addition, any categories or tags used in those posts will be automatically listed.
 
 I also realise that using this method, one does not need to use the jekyll plugin, `jekyll-archives`, and I have removed it from my site.

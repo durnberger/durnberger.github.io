@@ -4,10 +4,11 @@ title: Bluetooth
 date: 2021-01-26
 categories: linux
 tags: [bluetooth, ubuntu]
-excerpt:
-  This short article explains how to connect to a bluetooth device from the command line on Ubunut 20.04.
+
 ---
 This short article explains how to connect to a bluetooth device from the command line on Ubuntu 20.04.
+
+<!--more-->
 
 To establish which bluetooth devices are available, type the command `bluetoothctl devices`. The output should be similar to the following, providing the MAC address and name of the devices found;
 

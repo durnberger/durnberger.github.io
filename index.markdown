@@ -7,7 +7,7 @@ permalink: /
 
   <div class="archive-posts">
 
-    <h3 id="posts">Posts</h3>
+    <h2 id="posts">Posts</h2>
 
     {% assign postsByYearMonth = site.posts | group_by_exp:"post", "post.date | date: '%B %Y'"  %}
 
@@ -24,7 +24,7 @@ permalink: /
 
             <td class="link"><a href="{{ post.url }}">{{ post.title | escape }}</a></td>
 
-            <td class="excerpt">{{ post.excerpt | escape }}</td>
+            <td class="excerpt">{{ post.excerpt }}</td>
           </tr>
 
         {% endfor %}

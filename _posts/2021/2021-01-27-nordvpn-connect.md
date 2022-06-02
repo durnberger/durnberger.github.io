@@ -2,11 +2,13 @@
 layout: post
 title: Autostart NordVPN
 date: 2021-01-27
-categories: [linux, security]
+categories: security
 tags: [server, vpn]
-excerpt:
-  This short article explains how we ensure NordVPN is activated at system startup, a solution of particular use when running a headless server.
+
 ---
+This short article explains how we ensure NordVPN is activated at system startup, a solution of particular use when running a headless server.
+
+<!--more-->
 
 How do we ensure NordVPN is activated at system startup? This short article explains how it's done. The solution is particularly helpful when running a headless server; once the process described below has been completed, the script will require no user input during subsequent reboots.
 

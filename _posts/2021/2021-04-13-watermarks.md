@@ -4,9 +4,12 @@ title: Watermarks
 date: 2021-04-13
 categories: photography
 tags: [graphics, website, watermarks, resizing, imagemagick]
-excerpt:
-  In this article we learn how to protect our pictures by adding a watermark to images and disabling the mouse right click option.
+
 ---
+How to protect our pictures by adding a watermark to images and disabling the mouse right click option.
+
+<!--more-->
+
 Without putting too fine a point on it, as soon as you upload pictures to the internet, you lose control of them. Anyone can download them from your website and use them without your permission. You can however make life a little more difficult for the unscrupulous.
 
 ### Contents

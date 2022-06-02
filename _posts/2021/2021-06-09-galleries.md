@@ -7,10 +7,11 @@ categories:
 tags:
   - gallery
   - liquid
-excerpt:
-  How creating a new gallery framework can be made a little easier using jekyll and liquid.
 
 ---
+How creating a new gallery framework can be made a little easier using jekyll and liquid.
+
+<!--more-->
 
 As you might expect from a photographer's blog, my posts will often include collections of pictures. Creating a new gallery framework for each new post was becoming tedious, but thanks to the versatility of jekyll and liquid, there is a way to make the task a little easier, and this is how I did it.
 

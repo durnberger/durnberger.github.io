@@ -2,10 +2,11 @@
 layout: post
 categories: jekyll
 tags: [gallery, liquid, website]
-excerpt:
-  How to create galleries for your Jekyll project
 
 ---
+How to create galleries for your Jekyll project.
+
+<!--more-->
 
 I wanted to display a gallery of old family photographs on my genealogy website. I have come up with two solutions, detailed below.
 
@@ -48,6 +49,7 @@ album: family
 cols: 'col-sm-4'
 ---{% endraw %}
 ```
+
 Within the body of the post, and at the point where you want the gallery to appear add the following;
 
 ```liquid

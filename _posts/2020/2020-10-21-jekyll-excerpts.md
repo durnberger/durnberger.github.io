@@ -4,9 +4,11 @@ title: Jekyll Excerpts
 date: 2020-10-21
 categories: jekyll
 tags: [excerpts, liquid]
-excerpt:
-  How to control the use and placement of excerpts within documents.
+
 ---
+How to control the use and placement of excerpts within documents.
+
+<!--more-->
 
 When using Jekyll, the blog index page can be configured to show each post in full, achieved with the command `{% raw %}{{ post.content }}{% endraw %}` To show only an excerpt, the command is `{% raw %}{{ post.excerpt }}{% endraw %}`.
 

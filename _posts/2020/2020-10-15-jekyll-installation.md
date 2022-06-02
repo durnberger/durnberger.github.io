@@ -4,9 +4,11 @@ title: Jekyll Installation
 date: 2020-10-15
 categories: jekyll
 tags: [gems, installation]
-excerpt:
-  It would be so much easier to upload HTML documents as they are, and have them converted on the fly. Jekyll provides the solution.
+
 ---
+It would be so much easier to upload HTML documents as they are, and have them converted on the fly. Jekyll provides the solution.
+
+<!--more-->
 
 Instead of converting markdown documents into HTML format, it would be so much easier to upload the documents as they are, and have them converted on the fly. One such system, and one I have wanted to try for some time is [Jekyll](https://jekyllrb.com/). As explained on their website, it is simple.
 

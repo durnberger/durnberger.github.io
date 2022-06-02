@@ -4,9 +4,12 @@ title: Markdown Editor
 date: 2020-10-14
 categories: markdown
 tags: [atom, packages]
-excerpt:
-  A brief article explaining how to set up Atom as a markdown editor.
+
 ---
+
+A brief article explaining how to set up Atom as a markdown editor.
+
+<!--more-->
 
 My preferred markdown editor is [Atom](https://atom.io). Once it has been installed, I would recommend adding the following plugins from the Atom repository.
 

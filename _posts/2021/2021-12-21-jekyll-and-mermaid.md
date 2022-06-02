@@ -2,10 +2,17 @@
 layout: post
 categories: jekyll
 tags: [graphics, mermaid]
-excerpt:
-  How to use Mermaid to create graphs for use in your Jekyll project.
+
+image:
+  - file_path: /assets/graphics/2021-12-21-mermaid1.png
+    caption: Mermaid Graphic
+    cols: col-12
 
 ---
+Using Mermaid to create graphs for use in your Jekyll project.
+
+<!--more-->
+
 Over many years I have been working on my family history. I'm presently creating a website, which will bring together a collection of biographies detailing what I have learnt about the lives of my forebears.
 
 To make it easier for the reader to understand the connection between those forebears and the present generation, I wanted to create family trees illustrating the links. What I needed was a programme that would allow me to easily create a graph or flow diagram; in my quest to find something suitable, I discovered [Mermaid](https://mermaid-js.github.io/mermaid/#/){:target="_blank"}.
@@ -40,9 +47,9 @@ graph TD
 
 Having saved the document, and once the project has finished rebuilding, you will have a graph that looks something like this;
 
-<div class="tree thumbnail">
-  <img src="/assets/graphics/2021-12-21-mermaid1.png">
-</div>
+  {% include images.html content=image %}
+
+
 
 Impressive. A *family tree* layout any genealogist would find useful!
 

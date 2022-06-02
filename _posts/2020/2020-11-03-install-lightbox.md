@@ -5,8 +5,11 @@ date: 2020-11-03
 categories: photography
 tags: [html, liquid, website]
 excerpt:
-  I wanted a way to better display the images on this web site, and decided to utilize Lightbox.
+
 ---
+I wanted a way to better display the images on this web site, and decided to utilize Lightbox.
+
+<!--more-->
 
 I wanted a way to better display the images on my photography web site, and decided to utilize a lightbox. The idea is that when one clicks on the thumbnail of an image, a large version of the image appears, sitting over the main page. The lightbox I used on was installed as follows.
 

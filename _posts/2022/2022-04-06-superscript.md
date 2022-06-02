@@ -2,10 +2,11 @@
 layout: post
 categories: markdown
 tags: [html, subscript, superscript]
-excerpt:
-  How to use HTML to create sub- and superscript.
 
 ---
+How to use HTML to create sub- and superscript.
+
+<!--more-->
 
 Imagine you're writing about someone who is 5foot 9 and a quarter inches in height.
 

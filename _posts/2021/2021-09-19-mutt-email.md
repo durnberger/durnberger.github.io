@@ -5,10 +5,12 @@ categories:
 tags:
   - email
   - mutt
-excerpt:
-  How I learnt to configure the Mutt Email Client.
 
 ---
+Configuring the Mutt email client.
+
+<!--more-->
+
 ### Contents
 {% include toc.html %}
 
