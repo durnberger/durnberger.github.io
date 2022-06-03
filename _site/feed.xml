@@ -1,12 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-06-03T17:09:52+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Technology</title><subtitle>I write about Linux and Ubuntu, and the FOSS tools available to photographers</subtitle><author><name>Paul Dürnberger</name></author><entry><title type="html">i3blocks</title><link href="http://localhost:4000/2022/06/03/i3blocks/" rel="alternate" type="text/html" title="i3blocks" /><published>2022-06-03T00:00:00+01:00</published><updated>2022-06-03T00:00:00+01:00</updated><id>http://localhost:4000/2022/06/03/i3blocks</id><content type="html" xml:base="http://localhost:4000/2022/06/03/i3blocks/"><![CDATA[<p>As an alternative to the i3status bar, we have i3blocks.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-06-03T17:24:58+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Technology</title><subtitle>I write about Linux and Ubuntu, and the FOSS tools available to photographers</subtitle><author><name>Paul Dürnberger</name></author><entry><title type="html">i3blocks</title><link href="http://localhost:4000/2022/06/03/i3blocks/" rel="alternate" type="text/html" title="i3blocks" /><published>2022-06-03T00:00:00+01:00</published><updated>2022-06-03T00:00:00+01:00</updated><id>http://localhost:4000/2022/06/03/i3blocks</id><content type="html" xml:base="http://localhost:4000/2022/06/03/i3blocks/"><![CDATA[<p>As an alternative to the i3status bar, we have i3blocks.</p>
 
 <!--more-->
 
 <p>Begin by copying the generic conf file across to your user ~/.config/i3 directory;</p>
 
-<p><code class="language-plaintext highlighter-rouge">cp /etc/i3blocks.conf ~/.config/i3/i3blocks.conf</code></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cp</span> /etc/i3blocks.conf ~/.config/i3/i3blocks.conf
+</code></pre></div></div>
 
-<p>Next, and open <code class="language-plaintext highlighter-rouge">.config/i3/config</code>, find the <code class="language-plaintext highlighter-rouge">status bar</code> section and change <code class="language-plaintext highlighter-rouge">status_command</code> from <code class="language-plaintext highlighter-rouge">i3status</code> to <code class="language-plaintext highlighter-rouge">i3blocks -c ~/.config/i3/i3blocks.conf</code>.</p>
+<p>Next, and open <code class="language-plaintext highlighter-rouge">.config/i3/config</code>, find the <code class="language-plaintext highlighter-rouge">status bar</code> section and change <code class="language-plaintext highlighter-rouge">status_command</code> from <code class="language-plaintext highlighter-rouge">i3status</code> to</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>i3blocks <span class="nt">-c</span> ~/.config/i3/i3blocks.conf
+</code></pre></div></div>
 
 <p>Now, edit and save <code class="language-plaintext highlighter-rouge">~/.config/i3/i3blocks.conf</code> to suit. Below is my current version.</p>
 

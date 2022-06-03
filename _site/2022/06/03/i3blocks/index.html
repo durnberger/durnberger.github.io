@@ -77,9 +77,13 @@
 
 <p>Begin by copying the generic conf file across to your user ~/.config/i3 directory;</p>
 
-<p><code class="language-plaintext highlighter-rouge">cp /etc/i3blocks.conf ~/.config/i3/i3blocks.conf</code></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cp</span> /etc/i3blocks.conf ~/.config/i3/i3blocks.conf
+</code></pre></div></div>
 
-<p>Next, and open <code class="language-plaintext highlighter-rouge">.config/i3/config</code>, find the <code class="language-plaintext highlighter-rouge">status bar</code> section and change <code class="language-plaintext highlighter-rouge">status_command</code> from <code class="language-plaintext highlighter-rouge">i3status</code> to <code class="language-plaintext highlighter-rouge">i3blocks -c ~/.config/i3/i3blocks.conf</code>.</p>
+<p>Next, and open <code class="language-plaintext highlighter-rouge">.config/i3/config</code>, find the <code class="language-plaintext highlighter-rouge">status bar</code> section and change <code class="language-plaintext highlighter-rouge">status_command</code> from <code class="language-plaintext highlighter-rouge">i3status</code> to</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>i3blocks <span class="nt">-c</span> ~/.config/i3/i3blocks.conf
+</code></pre></div></div>
 
 <p>Now, edit and save <code class="language-plaintext highlighter-rouge">~/.config/i3/i3blocks.conf</code> to suit. Below is my current version.</p>
 
