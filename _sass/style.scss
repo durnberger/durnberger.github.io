@@ -22,6 +22,7 @@ h1, h1.navbar-brand {
 }
 
 h2, h3, h4, h5, h6 {
+  font-weight: bold;
   padding-top: 1.2rem;
 }
 
@@ -84,13 +85,7 @@ img {
 }
 
 .yearmonth {
-  padding-bottom: 2rem;
-}
-
-.yearmonth h3 {
-  padding-top: 0.5rem;
-  padding-left: 0.5rem;
-  border-left: solid 3px $cyan;
+  padding-bottom: 1rem;
 }
 
 .entry {
