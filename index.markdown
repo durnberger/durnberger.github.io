@@ -13,21 +13,25 @@ permalink: /
 
     {% for yearMonth in postsByYearMonth %}
 
-      <h3 class="yearmonth">{{ yearMonth.name }}</h3>
+      <div class="yearmonth">
 
-      {% for post in yearMonth.items %}
+        <h3>{{ yearMonth.name }}</h3>
 
-        <div class="entry">
+        {% for post in yearMonth.items %}
 
-          <div class="link"><a href="{{ post.url }}">{{ post.title }}</a></div>
+          <div class="entry">
 
-          <p class="excerpt">{{ post.date |  date: '%d %B %Y' }} - {{ post.excerpt | strip_html }}</p>
+            <div class="link"><a href="{{ post.url }}">{{ post.title }}</a></div>
 
-        </div>
+            <div class="excerpt">{{ post.excerpt | strip_html }}</div>
 
-      {% endfor %}
+          </div>
+
+        {% endfor %}
+
+      </div><!--End of yearmonth-->
 
     {% endfor %}
-  </div>
+  </div><!--end of archive-posts-->
 
 </div><!--end of #archives-->

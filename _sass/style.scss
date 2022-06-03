@@ -83,14 +83,18 @@ img {
   font-style: italic;
 }
 
-h3.yearmonth {
-  padding-top: 0.3rem;
+.yearmonth {
+  padding-bottom: 2rem;
+}
+
+.yearmonth h3 {
+  padding-top: 0.5rem;
   padding-left: 0.5rem;
   border-left: solid 3px $cyan;
 }
 
 .entry {
-  padding: 0.5rem 0 1rem 0;
+  padding: 0 0 1rem 0;
 }
 
 #archive {
