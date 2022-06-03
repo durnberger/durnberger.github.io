@@ -1,6 +1,8 @@
 body {
+  background-color: $gray-100;
   font-family: $font-family-primary;
   font-size: $font-size-normal;
+  color: $gray-900;
   overflow-x: hidden;
 }
 
@@ -43,7 +45,7 @@ h5, h6 {
   font-size: 1rem;
 }
 
-p, em, ul, li {
+p, em, ul, li, pre, code, pre code {
   font-size: 1rem;
 }
 
