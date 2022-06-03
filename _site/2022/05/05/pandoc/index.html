@@ -40,7 +40,7 @@
 
       
         <li class="nav-item">
-          <a class="nav-link" href="/">Archive</a>
+          <a class="nav-link" href="/">Posts</a>
         </li>
       
         <li class="nav-item">
@@ -94,7 +94,6 @@
 <span class="nt">&lt;/div&gt;</span>
 
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"content"</span><span class="nt">&gt;</span>
-
 </code></pre></div></div>
 
 <h3 id="footer">Footer</h3>
@@ -106,7 +105,6 @@
   <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"signature"</span><span class="nt">&gt;</span> Name
 
 <span class="nt">&lt;/footer&gt;</span>
-
 </code></pre></div></div>
 
 <h3 id="documents">Documents</h3>
@@ -233,13 +231,13 @@
     <span class="nl">vertical-align</span><span class="p">:</span> <span class="nb">middle</span><span class="p">;</span>
   <span class="p">}</span>
 <span class="err">}</span>
-
 </code></pre></div></div>
 
 <h3 id="conversion">Conversion</h3>
 <p>To convert the markdown file to PDF, we would need to run the following command;</p>
 
-<p><code class="language-plaintext highlighter-rouge">pandoc -f markdown --include-before-body layout/header.html --include-after-body layout/footer.html --metadata pagetitle="Title" --metadata lang="en-GB" --pdf-engine weasyprint --css style/style.css input.md output.pdf</code></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pandoc <span class="nt">-f</span> markdown <span class="nt">--include-before-body</span> layout/header.html <span class="nt">--include-after-body</span> layout/footer.html <span class="nt">--metadata</span> <span class="nv">pagetitle</span><span class="o">=</span><span class="s2">"Title"</span> <span class="nt">--metadata</span> <span class="nv">lang</span><span class="o">=</span><span class="s2">"en-GB"</span> <span class="nt">--pdf-engine</span> weasyprint <span class="nt">--css</span> style/style.css input.md output.pdf
+</code></pre></div></div>
 
 <p>This is rather a lot to remember, so instead write a bash script into which the various switches are defined. I have saved the script as <code class="language-plaintext highlighter-rouge">~/bin/write2pdf.sh</code>.</p>
 
@@ -255,7 +253,6 @@ pandoc  <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</s
         <span class="nt">--pdf-engine</span> weasyprint <span class="se">\</span>
         <span class="nt">--css</span> style/style.css <span class="se">\</span>
         <span class="nt">-o</span> <span class="s2">"</span><span class="nv">$2</span><span class="s2">"</span>
-
 </code></pre></div></div>
 
 <p><em>Don’t forget to make the script executable</em>.</p>
@@ -264,7 +261,7 @@ pandoc  <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</s
 
 <p><code class="language-plaintext highlighter-rouge">write2pdf.sh input.md output.pdf</code></p>
 
-<p>Here’s as alternative script. Instead appending the input and output file names to the script, why not create a script that simply converts all markdown files within a defined folder?</p>
+<p>Here’s as alternative script. Instead of appending the input and output file names to the script, why not create a script that simply converts all markdown files within a defined folder?</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
 <span class="c"># ~/bin/write2pdf.sh</span>
@@ -285,7 +282,6 @@ pandoc  <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</s
 
 </span><span class="nb">mv</span> <span class="k">*</span>.pdf pdf
 <span class="nb">mv</span> <span class="k">*</span>.md writing
-
 </code></pre></div></div>
 
 <p>With thanks to <a href="https://learnbyexample.github.io/customizing-pandoc/" target="_blank">learnbyexample.github.io/customizing-pandoc/</a>, for helping to get me on the right track.</p>
@@ -339,15 +335,6 @@ pandoc  <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</s
 
   <div class="navbar-nav ">
 
-    
-
-      <a class="nav-item nav-link" href="/"> Archive </a>
-
-    
-
-      <a class="nav-item nav-link" href="/readme/"> About </a>
-
-    
 
   </div>
 

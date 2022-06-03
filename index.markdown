@@ -13,23 +13,19 @@ permalink: /
 
     {% for yearMonth in postsByYearMonth %}
 
-      <table id="table">
+      <h3 class="yearmonth">{{ yearMonth.name }}</h3>
 
-        <th colspan="3">{{ yearMonth.name }}</th>
+      {% for post in yearMonth.items %}
 
-        {% for post in yearMonth.items %}
+        <div class="entry">
 
-          <tr>
-            <td class="published">{{ post.date |  date: '%d %b %Y' }}</td>
+          <div class="link"><a href="{{ post.url }}">{{ post.title }}</a></div>
 
-            <td class="link"><a href="{{ post.url }}">{{ post.title | escape }}</a></td>
+          <p class="excerpt">{{ post.date |  date: '%d %B %Y' }} - {{ post.excerpt | strip_html }}</p>
 
-            <td class="excerpt">{{ post.excerpt }}</td>
-          </tr>
+        </div>
 
-        {% endfor %}
-
-      </table>
+      {% endfor %}
 
     {% endfor %}
   </div>

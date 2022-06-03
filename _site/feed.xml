@@ -1,4 +1,178 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-06-02T19:25:35+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Technology</title><subtitle>I write about Linux and Ubuntu, and the FOSS tools available to photographers</subtitle><author><name>Paul Dürnberger</name></author><entry><title type="html">Compton</title><link href="http://localhost:4000/2022/05/31/compton/" rel="alternate" type="text/html" title="Compton" /><published>2022-05-31T00:00:00+01:00</published><updated>2022-05-31T00:00:00+01:00</updated><id>http://localhost:4000/2022/05/31/compton</id><content type="html" xml:base="http://localhost:4000/2022/05/31/compton/"><![CDATA[<p>Compton. A screen compositor that won’t sacrifice speed and responsiveness</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-06-03T16:48:43+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Technology</title><subtitle>I write about Linux and Ubuntu, and the FOSS tools available to photographers</subtitle><author><name>Paul Dürnberger</name></author><entry><title type="html">i3blocks</title><link href="http://localhost:4000/2022/06/03/i3blocks/" rel="alternate" type="text/html" title="i3blocks" /><published>2022-06-03T00:00:00+01:00</published><updated>2022-06-03T00:00:00+01:00</updated><id>http://localhost:4000/2022/06/03/i3blocks</id><content type="html" xml:base="http://localhost:4000/2022/06/03/i3blocks/"><![CDATA[<p>As an alternative to the i3status bar, we have i3blocks.</p>
+
+<!--more-->
+
+<p>Begin by copying the generic conf file across to your user ~/.config/i3 directory;</p>
+
+<p><code class="language-plaintext highlighter-rouge">cp /etc/i3blocks.conf ~/.config/i3/i3blocks.conf</code></p>
+
+<p>Next, and open <code class="language-plaintext highlighter-rouge">.config/i3/config</code>, find the <code class="language-plaintext highlighter-rouge">status bar</code> section and change <code class="language-plaintext highlighter-rouge">status_command</code> from <code class="language-plaintext highlighter-rouge">i3status</code> to <code class="language-plaintext highlighter-rouge">i3blocks -c ~/.config/i3/i3blocks.conf</code>.</p>
+
+<p>Now, edit and save <code class="language-plaintext highlighter-rouge">~/.config/i3/i3blocks.conf</code> to suit. Below is my current version.</p>
+
+<p>It might just be me, but is this a little easier to configure than i3status?</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># i3blocks config file</span>
+<span class="c">#</span>
+<span class="c"># Please see man i3blocks for a complete reference!</span>
+<span class="c"># The man page is also hosted at http://vivien.github.io/i3blocks</span>
+<span class="c">#</span>
+<span class="c"># List of valid properties:</span>
+<span class="c">#</span>
+<span class="c"># align</span>
+<span class="c"># color</span>
+<span class="c"># command</span>
+<span class="c"># full_text</span>
+<span class="c"># instance</span>
+<span class="c"># interval</span>
+<span class="c"># label</span>
+<span class="c"># min_width</span>
+<span class="c"># name</span>
+<span class="c"># separator</span>
+<span class="c"># separator_block_width</span>
+<span class="c"># short_text</span>
+<span class="c"># signal</span>
+<span class="c"># urgent</span>
+
+<span class="c"># Global properties</span>
+<span class="c">#</span>
+<span class="c"># The top properties below are applied to every block, but can be overridden.</span>
+<span class="c"># Each block command defaults to the script name to avoid boilerplate.</span>
+<span class="nb">command</span><span class="o">=</span>/usr/share/i3blocks/<span class="nv">$BLOCK_NAME</span>
+<span class="nv">separator_block_width</span><span class="o">=</span>15
+<span class="nv">markup</span><span class="o">=</span>none
+
+<span class="c"># Update status</span>
+<span class="o">[</span>updates]
+<span class="nv">label</span><span class="o">=</span>
+<span class="nv">interval</span><span class="o">=</span>3600
+<span class="nb">command</span><span class="o">=</span>~/bin/check4updates.sh
+
+<span class="c"># Disk usage</span>
+<span class="c">#</span>
+<span class="c"># The directory defaults to $HOME if the instance is not specified.</span>
+<span class="c"># The script may be called with a optional argument to set the alert</span>
+<span class="c"># (defaults to 10 for 10%).</span>
+<span class="o">[</span>disk]
+<span class="nv">label</span><span class="o">=</span>HOME
+<span class="c">#instance=/mnt/data</span>
+<span class="nv">interval</span><span class="o">=</span>30
+
+<span class="c"># Memory usage</span>
+<span class="c">#</span>
+<span class="c"># The type defaults to "mem" if the instance is not specified.</span>
+<span class="o">[</span>memory]
+<span class="nv">label</span><span class="o">=</span>MEM
+<span class="nv">interval</span><span class="o">=</span>30
+<span class="nv">separator</span><span class="o">=</span><span class="nb">false</span>
+
+<span class="o">[</span>memory]
+<span class="nv">label</span><span class="o">=</span>SWAP
+<span class="nv">instance</span><span class="o">=</span>swap
+<span class="nv">interval</span><span class="o">=</span>30
+<span class="nv">separator</span><span class="o">=</span><span class="nb">true</span>
+
+<span class="c"># Network interface monitoring</span>
+<span class="c">#</span>
+<span class="c"># If the instance is not specified, use the interface used for default route.</span>
+<span class="c"># The address can be forced to IPv4 or IPv6 with -4 or -6 switches.</span>
+<span class="o">[</span>iface]
+<span class="c">#instance=wlan0</span>
+<span class="nv">color</span><span class="o">=</span><span class="c">#00FF00</span>
+<span class="nv">interval</span><span class="o">=</span>10
+<span class="nv">separator</span><span class="o">=</span><span class="nb">true</span>
+
+<span class="c">#[wifi]</span>
+<span class="c">#instance=wlp3s0</span>
+<span class="c">#interval=10</span>
+<span class="c">#separator=false</span>
+
+<span class="c">#[bandwidth]</span>
+<span class="c">#instance=eth0</span>
+<span class="c">#interval=5</span>
+
+<span class="c"># CPU usage</span>
+<span class="c">#</span>
+<span class="c"># The script may be called with -w and -c switches to specify thresholds,</span>
+<span class="c"># see the script for details.</span>
+<span class="o">[</span>cpu_usage]
+<span class="nv">label</span><span class="o">=</span>CPU
+<span class="nv">interval</span><span class="o">=</span>5
+<span class="nv">min_width</span><span class="o">=</span>CPU:100.00%
+<span class="c">#separator=false</span>
+
+<span class="c">#[load_average]</span>
+<span class="c">#interval=10</span>
+
+<span class="c"># Battery indicator</span>
+<span class="c">#</span>
+<span class="c"># The battery instance defaults to 0.</span>
+<span class="c">#[battery]</span>
+<span class="c">#label=BAT</span>
+<span class="c">#label=⚡</span>
+<span class="c">#instance=1</span>
+<span class="c">#interval=30</span>
+
+<span class="c"># Generic media player support</span>
+<span class="c">#</span>
+<span class="c"># This displays "ARTIST - SONG" if a music is playing.</span>
+<span class="c"># Supported players are: spotify, vlc, audacious, xmms2, mplayer, and others.</span>
+<span class="c">#[mediaplayer]</span>
+<span class="c">#instance=spotify</span>
+<span class="c">#interval=5</span>
+<span class="c">#signal=10</span>
+
+<span class="c"># OpenVPN support</span>
+<span class="c">#</span>
+<span class="c"># Support multiple VPN, with colors.</span>
+<span class="c">#[openvpn]</span>
+<span class="c">#interval=20</span>
+
+<span class="c"># Temperature</span>
+<span class="c">#</span>
+<span class="c"># Support multiple chips, though lm-sensors.</span>
+<span class="c"># The script may be called with -w and -c switches to specify thresholds,</span>
+<span class="c"># see the script for details.</span>
+<span class="o">[</span>temperature]
+<span class="nv">label</span><span class="o">=</span>TEMP
+<span class="nv">interval</span><span class="o">=</span>10
+
+<span class="c"># Volume indicator</span>
+<span class="c">#</span>
+<span class="c"># The first parameter sets the step (and units to display)</span>
+<span class="c"># The second parameter overrides the mixer selection</span>
+<span class="c"># See the script for details.</span>
+<span class="o">[</span>volume]
+<span class="nb">command</span><span class="o">=</span>/usr/share/i3blocks/volume 5 pulse
+<span class="nv">label</span><span class="o">=</span>VOL
+<span class="c">#label=♪</span>
+<span class="nv">instance</span><span class="o">=</span>Master
+<span class="c">#instance=PCM</span>
+<span class="nv">interval</span><span class="o">=</span>1
+<span class="nv">signal</span><span class="o">=</span>5
+
+<span class="c"># Date Time</span>
+<span class="c">#</span>
+<span class="o">[</span><span class="nb">time</span><span class="o">]</span>
+<span class="nb">command</span><span class="o">=</span><span class="nb">date</span> <span class="s1">'+%A %d %B %Y %H:%M:%S'</span>
+<span class="nv">interval</span><span class="o">=</span>1
+
+<span class="c"># Key indicators</span>
+<span class="c">#</span>
+<span class="c"># Add the following bindings to i3 config file:</span>
+<span class="c">#</span>
+<span class="c"># bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks</span>
+<span class="c"># bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks</span>
+<span class="c">#[keyindicator]</span>
+<span class="c">#instance=CAPS</span>
+<span class="c">#interval=once</span>
+<span class="c">#signal=11</span>
+
+<span class="c">#[keyindicator]</span>
+<span class="c">#instance=NUM</span>
+<span class="c">#interval=once</span>
+<span class="c">#signal=11</span>
+</code></pre></div></div>]]></content><author><name>Paul Dürnberger</name></author><category term="linux" /><category term="i3" /><category term="wm" /><summary type="html"><![CDATA[As an alternative to the i3status bar, we have i3blocks.]]></summary></entry><entry><title type="html">Compton</title><link href="http://localhost:4000/2022/05/31/compton/" rel="alternate" type="text/html" title="Compton" /><published>2022-05-31T00:00:00+01:00</published><updated>2022-05-31T00:00:00+01:00</updated><id>http://localhost:4000/2022/05/31/compton</id><content type="html" xml:base="http://localhost:4000/2022/05/31/compton/"><![CDATA[<p>Compton. A screen compositor that won’t sacrifice speed and responsiveness</p>
 
 <!--more-->
 
@@ -20,13 +194,11 @@
 <p>To convert a PDF to a PNG:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pdftoppm input.pdf outputname -png
-
 </code></pre></div></div>
 
 <p>To convert a PDF to a JPEG:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pdftoppm input.pdf outputname -jpeg
-
 </code></pre></div></div>]]></content><author><name>Paul Dürnberger</name></author><category term="linux" /><category term="jpeg" /><category term="pdf" /><category term="png" /><summary type="html"><![CDATA[How to convert a PDF into image file(s).]]></summary></entry><entry><title type="html">Pandoc</title><link href="http://localhost:4000/2022/05/05/pandoc/" rel="alternate" type="text/html" title="Pandoc" /><published>2022-05-05T00:00:00+01:00</published><updated>2022-05-05T00:00:00+01:00</updated><id>http://localhost:4000/2022/05/05/pandoc</id><content type="html" xml:base="http://localhost:4000/2022/05/05/pandoc/"><![CDATA[<p>Using pandoc and weasyprint to create a letter template.</p>
 
 <!--more-->
@@ -50,7 +222,6 @@
 <span class="nt">&lt;/div&gt;</span>
 
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"content"</span><span class="nt">&gt;</span>
-
 </code></pre></div></div>
 
 <h3 id="footer">Footer</h3>
@@ -62,7 +233,6 @@
   <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"signature"</span><span class="nt">&gt;</span> Name
 
 <span class="nt">&lt;/footer&gt;</span>
-
 </code></pre></div></div>
 
 <h3 id="documents">Documents</h3>
@@ -189,13 +359,13 @@
     <span class="nl">vertical-align</span><span class="p">:</span> <span class="nb">middle</span><span class="p">;</span>
   <span class="p">}</span>
 <span class="err">}</span>
-
 </code></pre></div></div>
 
 <h3 id="conversion">Conversion</h3>
 <p>To convert the markdown file to PDF, we would need to run the following command;</p>
 
-<p><code class="language-plaintext highlighter-rouge">pandoc -f markdown --include-before-body layout/header.html --include-after-body layout/footer.html --metadata pagetitle="Title" --metadata lang="en-GB" --pdf-engine weasyprint --css style/style.css input.md output.pdf</code></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pandoc <span class="nt">-f</span> markdown <span class="nt">--include-before-body</span> layout/header.html <span class="nt">--include-after-body</span> layout/footer.html <span class="nt">--metadata</span> <span class="nv">pagetitle</span><span class="o">=</span><span class="s2">"Title"</span> <span class="nt">--metadata</span> <span class="nv">lang</span><span class="o">=</span><span class="s2">"en-GB"</span> <span class="nt">--pdf-engine</span> weasyprint <span class="nt">--css</span> style/style.css input.md output.pdf
+</code></pre></div></div>
 
 <p>This is rather a lot to remember, so instead write a bash script into which the various switches are defined. I have saved the script as <code class="language-plaintext highlighter-rouge">~/bin/write2pdf.sh</code>.</p>
 
@@ -211,7 +381,6 @@ pandoc  <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</s
         <span class="nt">--pdf-engine</span> weasyprint <span class="se">\</span>
         <span class="nt">--css</span> style/style.css <span class="se">\</span>
         <span class="nt">-o</span> <span class="s2">"</span><span class="nv">$2</span><span class="s2">"</span>
-
 </code></pre></div></div>
 
 <p><em>Don’t forget to make the script executable</em>.</p>
@@ -220,7 +389,7 @@ pandoc  <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</s
 
 <p><code class="language-plaintext highlighter-rouge">write2pdf.sh input.md output.pdf</code></p>
 
-<p>Here’s as alternative script. Instead appending the input and output file names to the script, why not create a script that simply converts all markdown files within a defined folder?</p>
+<p>Here’s as alternative script. Instead of appending the input and output file names to the script, why not create a script that simply converts all markdown files within a defined folder?</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
 <span class="c"># ~/bin/write2pdf.sh</span>
@@ -241,7 +410,6 @@ pandoc  <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</s
 
 </span><span class="nb">mv</span> <span class="k">*</span>.pdf pdf
 <span class="nb">mv</span> <span class="k">*</span>.md writing
-
 </code></pre></div></div>
 
 <p>With thanks to <a href="https://learnbyexample.github.io/customizing-pandoc/" target="_blank">learnbyexample.github.io/customizing-pandoc/</a>, for helping to get me on the right track.</p>]]></content><author><name>Paul Dürnberger</name></author><category term="linux" /><category term="bash" /><category term="pandoc" /><category term="pdf" /><category term="weasyprint" /><summary type="html"><![CDATA[Using pandoc and weasyprint to create a letter template.]]></summary></entry><entry><title type="html">For Loop</title><link href="http://localhost:4000/2022/04/19/for-loop/" rel="alternate" type="text/html" title="For Loop" /><published>2022-04-19T00:00:00+01:00</published><updated>2022-04-19T00:00:00+01:00</updated><id>http://localhost:4000/2022/04/19/for-loop</id><content type="html" xml:base="http://localhost:4000/2022/04/19/for-loop/"><![CDATA[<p>A simple process to convert a batch of .dot diagrams into the .svg format using a for loop.</p>
@@ -340,20 +508,4 @@ set alias_file = "~/.mutt/mutt-alias"
 <p>To create the document, change to the directory in which the images are located, then run the following command:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>img2pdf 1.jpg 2.jpg 3.jpg -o output.pdf
-</code></pre></div></div>]]></content><author><name>Paul Dürnberger</name></author><category term="linux" /><category term="graphics" /><category term="pdf" /><summary type="html"><![CDATA[How to convert a number of .jpg images into one PDF document.]]></summary></entry><entry><title type="html">Format A Disk</title><link href="http://localhost:4000/2022/01/15/format-a-disk/" rel="alternate" type="text/html" title="Format A Disk" /><published>2022-01-15T00:00:00+00:00</published><updated>2022-01-15T00:00:00+00:00</updated><id>http://localhost:4000/2022/01/15/format-a-disk</id><content type="html" xml:base="http://localhost:4000/2022/01/15/format-a-disk/"><![CDATA[<p>Format a USB drive</p>
-
-<!--more-->
-
-<p>Insert the disk and then, to identify the attached disks, type</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo fdisk -l
-</code></pre></div></div>
-
-<p>The USB device will be listed as <code class="language-plaintext highlighter-rouge">/dev/sdx</code> or similar, whilst the partition on it will be identified as <code class="language-plaintext highlighter-rouge">/dev/sdx1</code> or similar.</p>
-
-<p><strong>Ensure the correct partition is identified; the following action cannot be undone</strong></p>
-
-<p>Having ensured the correct disk has been identified, the partition can be formatted as FAT16 using this command;</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo mkfs -t fat /dev/sdx1
-</code></pre></div></div>]]></content><author><name>Paul Dürnberger</name></author><category term="linux" /><category term="disk" /><category term="format" /><summary type="html"><![CDATA[Format a USB drive]]></summary></entry></feed>
+</code></pre></div></div>]]></content><author><name>Paul Dürnberger</name></author><category term="linux" /><category term="graphics" /><category term="pdf" /><summary type="html"><![CDATA[How to convert a number of .jpg images into one PDF document.]]></summary></entry></feed>
