@@ -45,8 +45,9 @@ h5, h6 {
   font-size: 1rem;
 }
 
-p, em, ul, li, pre, code, pre code {
+p, em, ul, li {
   font-size: 1rem;
+  line-height: 1.668;
 }
 
 footer {
@@ -56,7 +57,7 @@ footer {
   border-top: solid 1px $gray-300;
 }
 
-footer p {
+p.footer {
   font-size: $font-size-small;
 }
 
@@ -68,7 +69,6 @@ footer p {
 
 pre {
   background-color: $gray-200 !important;
-  font-family: $font-family-monospace;
   padding: 5px;
 }
 
@@ -84,45 +84,4 @@ img {
 .caption p {
   font-size: $font-size-small;
   font-style: italic;
-}
-
-.entry {
-  padding: 0 0 1.2rem 0;
-}
-
-#archive {
-  #table {
-    width: 100%;
-    margin-bottom: 1.25rem;
-  }
-
-  #table th {
-    background-color: $gray-200;
-    padding-left: 0.5rem;
-  }
-
-  #table tr,
-  #table td {
-    border: solid 1px $gray-500;
-  }
-
-  #table td,
-  #table td a {
-    font-size: $font-size-small;
-  }
-
-  #table .published,
-  #table .link {
-    width: 20%;
-  }
-
-  #table .excerpt {
-    width: 60%;
-  }
-
-  #table .published,
-  #table .link,
-  #table .excerpt {
-    padding: 0 0.5rem 0.5rem 0.5rem;
-  }
 }
