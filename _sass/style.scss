@@ -38,11 +38,11 @@ h3 {
 }
 
 h4 {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 
 h5, h6 {
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 
 p, em, ul, li {
@@ -57,7 +57,7 @@ footer {
   border-top: solid 1px $gray-300;
 }
 
-p.footer {
+.footer p {
   font-size: $font-size-small;
 }
 
@@ -67,9 +67,13 @@ p.footer {
   padding-top: 1rem;
 }
 
+pre code {
+  font-family: $font-family-monospace;
+}
+
 pre {
   background-color: $gray-200 !important;
-  padding: 5px;
+  padding: 1rem;
 }
 
 img {

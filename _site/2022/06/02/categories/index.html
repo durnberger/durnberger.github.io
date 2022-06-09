@@ -18,7 +18,7 @@
 </head>
 
 
-  <body id="nano syntax highlighting">
+  <body id="categories">
 
     
 <header>
@@ -62,87 +62,47 @@
       <div class="container-fluid">
   <div id="post">
 
-    <h2>Nano Syntax Highlighting</h2>
+    <h2>Categories</h2>
 
     <p>
       Category:
       
-        <a class="category" href="/categories/linux">Linux</a>
-      
-        <a class="category" href="/categories/markdown">Markdown</a>
+        <a class="category" href="/categories/jekyll">Jekyll</a>
       
     </p>
 
-    <p>Syntax highlighting for markdown files in nano.</p>
+    <p>How to create a page to list posts by categories and which will work on GitHub Pages.</p>
 
 <!--more-->
 
-<p>This post explains how to add syntax highlighting for markdown files in nano.</p>
+<p>For each category, create a page. Within the page, add the following script. In this example we are creating a page to display posts assigned to the category <code class="language-plaintext highlighter-rouge">jekyll</code>.</p>
 
-<p>Referring to the file <code class="language-plaintext highlighter-rouge">~/.nanorc</code>, ensure the line <code class="language-plaintext highlighter-rouge">include "/usr/share/nano/*.nanorc"</code> is uncommented.</p>
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div id="category"&gt;
+  &lt;h2&gt;CATEGORY: Jekyll&lt;/h2&gt;
 
-<p>Create a new file, <code class="language-plaintext highlighter-rouge">sudo nano /usr/share/nano/markdown.nanorc</code>,
-and add the following to it.</p>
+  <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">post</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">site.categories.jekyll</span><span class="w"> </span><span class="p">%}</span>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>syntax "Markdown" "\.(md|mkd|mkdn|markdown)$"
+    &lt;div class="entry"&gt;
 
-# Tables (Github extension)
-color cyan ".*[ :]\|[ :].*"
+      &lt;h3 class="link"&gt;&lt;a href="<span class="p">{{</span><span class="w"> </span><span class="nv">post</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">}}</span>"&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">post</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>&lt;/a&gt;&lt;/h3&gt;
 
-# quotes
-color yellow  start="^&gt;" end="^$"
-color yellow  "^&gt;.*"
+      &lt;p class="excerpt"&gt;
+        <span class="p">{{</span><span class="w"> </span><span class="nv">post</span><span class="p">.</span><span class="nv">date</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date</span><span class="p">:</span><span class="w"> </span><span class="s1">'%d %B %Y'</span><span class="w"> </span><span class="p">}}</span>
+          &lt;br&gt;
+        <span class="p">{{</span><span class="w"> </span><span class="nv">post</span><span class="p">.</span><span class="nv">excerpt</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">strip_html</span><span class="w"> </span><span class="p">}}</span>
+      &lt;/p&gt;
 
-# Emphasis
-color green "(^|[[:space:]])(_[^ ][^_]*_|\*[^ ][^*]*\*)"
+    &lt;/div&gt;
 
-# Strong emphasis
-color brightgreen "(^|[[:space:]])(__[^ ][^_]*__|\*\*[^ ][^*]*\*\*)"
-
-# strike-through
-color red "(^|[[:space:]])~~[^ ][^~]*~~"
-
-# horizontal rules
-color brightmagenta "^(---+|===+|___+|\*\*\*+)\s*$"
-
-# headlines
-color brightred  "^#{1,6}.*"
-
-# lists
-color cyan   "^[[:space:]]*[\*+-] |^[[:space:]]*[0-9]+\. "
-
-# leading whitespace
-color black    "^[[:space:]]+"
-
-# misc
-color magenta   "\(([CcRr]|[Tt][Mm])\)" "\.{3}" "(^|[[:space:]])\-\-($|[[:space:]])"
-
-# links
-color brightblue "\[[^]]+\]"
-color brightblue "\[([^][]|\[[^]]*\])*\]\([^)]+\)"
-
-# images
-color magenta "!\[[^][]*\](\([^)]+\)|\[[^]]+\])"
-
-# urls
-color brightyellow "https?://[^ )&gt;]+"
-
-# code
-color yellow   "`[^`]*`|^ {4}[^-+*].*"
-# code blocks
-color yellow start="^```[^$]" end="^```$"
-color yellow "^```$"
-
-## Trailing spaces
-color ,green "[[:space:]]+$"
-
+  <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+&lt;/div&gt;
 </code></pre></div></div>
 
-<p>Syntax highlighting for a variety of other file types can be found <a href="https://github.com/serialhex/nano-highlight">here</a>.</p>
+<p>With thanks to <a href="https://qfimg.github.io/jekyll-categories/" target="_blank">qfimg.github.io</a></p>
 
 
     <p class="published">
-      1 October 2021
+      2 June 2022
     </p>
 
   </div><!--End of #post-->

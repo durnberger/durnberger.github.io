@@ -1,4 +1,109 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-06-04T17:20:33+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Technology</title><subtitle>I write about Linux and Ubuntu, and the FOSS tools available to photographers</subtitle><author><name>Paul Dürnberger</name></author><entry><title type="html">i3blocks</title><link href="http://localhost:4000/2022/06/03/i3blocks/" rel="alternate" type="text/html" title="i3blocks" /><published>2022-06-03T00:00:00+01:00</published><updated>2022-06-03T00:00:00+01:00</updated><id>http://localhost:4000/2022/06/03/i3blocks</id><content type="html" xml:base="http://localhost:4000/2022/06/03/i3blocks/"><![CDATA[<p>As an alternative to the i3status bar, we have i3blocks.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-06-09T14:34:36+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Technology</title><subtitle>I write about Linux and Ubuntu, and the FOSS tools available to photographers</subtitle><author><name>Paul Dürnberger</name></author><entry><title type="html">Pandoc Again</title><link href="http://localhost:4000/2022/06/09/pandoc-again/" rel="alternate" type="text/html" title="Pandoc Again" /><published>2022-06-09T00:00:00+01:00</published><updated>2022-06-09T00:00:00+01:00</updated><id>http://localhost:4000/2022/06/09/pandoc-again</id><content type="html" xml:base="http://localhost:4000/2022/06/09/pandoc-again/"><![CDATA[<p>Using pandoc and weasyprint to create a letter template, but this time a little more elegantly!</p>
+
+<!--more-->
+
+<p>In an earlier post, <a href="/2022/05/05/pandoc" target="_blank">Pandoc</a>, I created a bash script to convert a <code class="language-plaintext highlighter-rouge">markdown</code> file to a <code class="language-plaintext highlighter-rouge">pdf</code>. The final version converted all markdown files within a defined folder.</p>
+
+<p>Using the script shown below, a list of markdown documents is displayed. You can then select one of those documents for conversion. The rest would remain untouched.</p>
+
+<p>The key is these 2 lines;</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>files="$(ls --file-type *.md)"
+
+select filename in ${files};
+</code></pre></div></div>
+
+<p>The first line lists the markdown files in the given directory, whilst the second line allow you to select one file from the list, and for that file to be processed.</p>
+
+<p>Much neater!</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+<span class="c">#</span>
+<span class="c"># ~/bin/write2pdf.sh</span>
+<span class="c">#</span>
+<span class="c"># With thanks to:</span>
+<span class="c"># https://linuxconfig.org/how-to-create-a-selection-menu-using-the-select-statement-in-bash-shell</span>
+<span class="c">#</span>
+
+<span class="nb">cd</span> /home/<span class="nv">$USER</span>/Correspondence
+
+<span class="c"># Choose from letter, memo or note</span>
+<span class="c">#</span>
+<span class="nb">echo</span> <span class="s2">"Are you writing a letter, memo or note?"</span>
+<span class="nb">echo</span> <span class="s2">"1) Letter"</span>
+<span class="nb">echo</span> <span class="s2">"2) Memo"</span>
+<span class="nb">echo</span> <span class="s2">"3) Note"</span>
+<span class="nb">read </span>choice
+
+
+<span class="k">if</span> <span class="o">[</span> <span class="s2">"</span><span class="nv">$choice</span><span class="s2">"</span> <span class="o">==</span> <span class="s2">"1"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+<span class="c"># Letter</span>
+
+	<span class="nv">PS3</span><span class="o">=</span><span class="s2">"Select a file:"</span>
+
+	<span class="nv">files</span><span class="o">=</span><span class="s2">"</span><span class="si">$(</span><span class="nb">ls</span> <span class="nt">--file-type</span> <span class="k">*</span>.md<span class="si">)</span><span class="s2">"</span>
+
+	<span class="k">select </span>filename <span class="k">in</span> <span class="k">${</span><span class="nv">files</span><span class="k">}</span><span class="p">;</span>
+
+		<span class="k">do
+
+		</span><span class="nv">stem</span><span class="o">=</span><span class="si">$(</span><span class="nb">basename</span> <span class="k">${</span><span class="nv">filename</span><span class="k">}</span> .md<span class="si">)</span>
+
+		pandoc <span class="nt">-f</span> markdown <span class="nt">--include-before-body</span> layout/header-letter.html <span class="nt">--include-after-body</span> layout/footer.html <span class="nt">--metadata</span> <span class="nv">pagetitle</span><span class="o">=</span><span class="s2">"</span><span class="nv">$stem</span><span class="s2">"</span> <span class="nt">--metadata</span> <span class="nv">lang</span><span class="o">=</span><span class="s2">"en-GB"</span> <span class="nt">--pdf-engine</span> weasyprint <span class="nt">--css</span> style/style.css <span class="k">${</span><span class="nv">filename</span><span class="k">}</span> <span class="nt">-o</span> <span class="nv">$stem</span>.pdf
+
+			<span class="nb">break</span><span class="p">;</span>
+
+		<span class="k">done</span>
+<span class="c"># End of letter</span>
+
+
+
+
+<span class="k">elif</span> <span class="o">[</span> <span class="s2">"</span><span class="nv">$choice</span><span class="s2">"</span> <span class="o">==</span> <span class="s2">"2"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+<span class="c"># Memo</span>
+
+	<span class="nv">PS3</span><span class="o">=</span><span class="s2">"Select a file:"</span>
+
+	<span class="nv">files</span><span class="o">=</span><span class="s2">"</span><span class="si">$(</span><span class="nb">ls</span> <span class="nt">--file-type</span> <span class="k">*</span>.md<span class="si">)</span><span class="s2">"</span>
+
+	<span class="k">select </span>filename <span class="k">in</span> <span class="k">${</span><span class="nv">files</span><span class="k">}</span><span class="p">;</span>
+
+		<span class="k">do
+
+		</span><span class="nv">stem</span><span class="o">=</span><span class="si">$(</span><span class="nb">basename</span> <span class="k">${</span><span class="nv">filename</span><span class="k">}</span> .md<span class="si">)</span>
+
+		pandoc <span class="nt">-f</span> markdown <span class="nt">--include-before-body</span> layout/header-memo.html <span class="nt">--include-after-body</span> layout/footer.html <span class="nt">--metadata</span> <span class="nv">pagetitle</span><span class="o">=</span><span class="s2">"</span><span class="nv">$stem</span><span class="s2">"</span> <span class="nt">--metadata</span> <span class="nv">lang</span><span class="o">=</span><span class="s2">"en-GB"</span> <span class="nt">--pdf-engine</span> weasyprint <span class="nt">--css</span> style/style.css <span class="k">${</span><span class="nv">filename</span><span class="k">}</span> <span class="nt">-o</span> <span class="nv">$stem</span>.pdf
+
+			<span class="nb">break</span><span class="p">;</span>
+
+		<span class="k">done</span>
+<span class="c"># End of memo</span>
+
+
+
+<span class="k">else</span>
+<span class="c"># Note</span>
+	<span class="nv">PS3</span><span class="o">=</span><span class="s2">"Select a file:"</span>
+
+	<span class="nv">files</span><span class="o">=</span><span class="s2">"</span><span class="si">$(</span><span class="nb">ls</span> <span class="nt">--file-type</span> <span class="k">*</span>.md<span class="si">)</span><span class="s2">"</span>
+
+	<span class="k">select </span>filename <span class="k">in</span> <span class="k">${</span><span class="nv">files</span><span class="k">}</span><span class="p">;</span>
+
+		<span class="k">do
+
+		</span><span class="nv">stem</span><span class="o">=</span><span class="si">$(</span><span class="nb">basename</span> <span class="k">${</span><span class="nv">filename</span><span class="k">}</span> .md<span class="si">)</span>
+
+		pandoc <span class="nt">-f</span> markdown <span class="nt">--include-before-body</span> layout/header-note.html <span class="nt">--include-after-body</span> layout/footer.html <span class="nt">--metadata</span> <span class="nv">pagetitle</span><span class="o">=</span><span class="s2">"</span><span class="nv">$stem</span><span class="s2">"</span> <span class="nt">--metadata</span> <span class="nv">lang</span><span class="o">=</span><span class="s2">"en-GB"</span> <span class="nt">--pdf-engine</span> weasyprint <span class="nt">--css</span> style/style.css <span class="k">${</span><span class="nv">filename</span><span class="k">}</span> <span class="nt">-o</span> <span class="nv">$stem</span>.pdf
+
+			<span class="nb">break</span><span class="p">;</span>
+
+		<span class="k">done</span>
+<span class="c"># End of note</span>
+
+<span class="k">fi</span>
+</code></pre></div></div>
+
+<p>With thanks to <a href="https://linuxconfig.org/how-to-create-a-selection-menu-using-the-select-statement-in-bash-shell" target="_blank">Linuxconfig.org</a> for setting me on the right track.</p>]]></content><author><name>Paul Dürnberger</name></author><category term="linux" /><category term="bash" /><category term="pandoc" /><category term="pdf" /><category term="weasyprint" /><summary type="html"><![CDATA[Using pandoc and weasyprint to create a letter template, but this time a little more elegantly!]]></summary></entry><entry><title type="html">i3blocks</title><link href="http://localhost:4000/2022/06/03/i3blocks/" rel="alternate" type="text/html" title="i3blocks" /><published>2022-06-03T00:00:00+01:00</published><updated>2022-06-03T00:00:00+01:00</updated><id>http://localhost:4000/2022/06/03/i3blocks</id><content type="html" xml:base="http://localhost:4000/2022/06/03/i3blocks/"><![CDATA[<p>As an alternative to the i3status bar, we have i3blocks.</p>
 
 <!--more-->
 
@@ -176,7 +281,34 @@
 <span class="c">#instance=NUM</span>
 <span class="c">#interval=once</span>
 <span class="c">#signal=11</span>
-</code></pre></div></div>]]></content><author><name>Paul Dürnberger</name></author><category term="linux" /><category term="i3" /><category term="wm" /><summary type="html"><![CDATA[As an alternative to the i3status bar, we have i3blocks.]]></summary></entry><entry><title type="html">Compton</title><link href="http://localhost:4000/2022/05/31/compton/" rel="alternate" type="text/html" title="Compton" /><published>2022-05-31T00:00:00+01:00</published><updated>2022-05-31T00:00:00+01:00</updated><id>http://localhost:4000/2022/05/31/compton</id><content type="html" xml:base="http://localhost:4000/2022/05/31/compton/"><![CDATA[<p>Compton. A screen compositor that won’t sacrifice speed and responsiveness</p>
+</code></pre></div></div>]]></content><author><name>Paul Dürnberger</name></author><category term="linux" /><category term="i3" /><category term="wm" /><summary type="html"><![CDATA[As an alternative to the i3status bar, we have i3blocks.]]></summary></entry><entry><title type="html">Categories</title><link href="http://localhost:4000/2022/06/02/categories/" rel="alternate" type="text/html" title="Categories" /><published>2022-06-02T00:00:00+01:00</published><updated>2022-06-02T00:00:00+01:00</updated><id>http://localhost:4000/2022/06/02/categories</id><content type="html" xml:base="http://localhost:4000/2022/06/02/categories/"><![CDATA[<p>How to create a page to list posts by categories and which will work on GitHub Pages.</p>
+
+<!--more-->
+
+<p>For each category, create a page. Within the page, add the following script. In this example we are creating a page to display posts assigned to the category <code class="language-plaintext highlighter-rouge">jekyll</code>.</p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div id="category"&gt;
+  &lt;h2&gt;CATEGORY: Jekyll&lt;/h2&gt;
+
+  <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">post</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">site.categories.jekyll</span><span class="w"> </span><span class="p">%}</span>
+
+    &lt;div class="entry"&gt;
+
+      &lt;h3 class="link"&gt;&lt;a href="<span class="p">{{</span><span class="w"> </span><span class="nv">post</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">}}</span>"&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">post</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>&lt;/a&gt;&lt;/h3&gt;
+
+      &lt;p class="excerpt"&gt;
+        <span class="p">{{</span><span class="w"> </span><span class="nv">post</span><span class="p">.</span><span class="nv">date</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date</span><span class="p">:</span><span class="w"> </span><span class="s1">'%d %B %Y'</span><span class="w"> </span><span class="p">}}</span>
+          &lt;br&gt;
+        <span class="p">{{</span><span class="w"> </span><span class="nv">post</span><span class="p">.</span><span class="nv">excerpt</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">strip_html</span><span class="w"> </span><span class="p">}}</span>
+      &lt;/p&gt;
+
+    &lt;/div&gt;
+
+  <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+&lt;/div&gt;
+</code></pre></div></div>
+
+<p>With thanks to <a href="https://qfimg.github.io/jekyll-categories/" target="_blank">qfimg.github.io</a></p>]]></content><author><name>Paul Dürnberger</name></author><category term="jekyll" /><category term="categories" /><category term="github" /><category term="liquid" /><summary type="html"><![CDATA[How to create a page to list posts by categories and which will work on GitHub Pages.]]></summary></entry><entry><title type="html">Compton</title><link href="http://localhost:4000/2022/05/31/compton/" rel="alternate" type="text/html" title="Compton" /><published>2022-05-31T00:00:00+01:00</published><updated>2022-05-31T00:00:00+01:00</updated><id>http://localhost:4000/2022/05/31/compton</id><content type="html" xml:base="http://localhost:4000/2022/05/31/compton/"><![CDATA[<p>Compton. A screen compositor that won’t sacrifice speed and responsiveness</p>
 
 <!--more-->
 
@@ -479,38 +611,4 @@ source ~/.mutt/mutt-alias
 set alias_file = "~/.mutt/mutt-alias"
 </code></pre></div></div>
 
-<p>Restart mutt, and highlight one of the messages in your inbox. Tap the letter <code class="language-plaintext highlighter-rouge">a</code> and at the bottom of the screen you will be asked what alias you want to assign to the sender of that email. Answer the subsequent questions, and save. The next time you want to email that person, at <code class="language-plaintext highlighter-rouge">To:</code> type in the alias you assigned.</p>]]></content><author><name>Paul Dürnberger</name></author><category term="linux" /><category term="addressbook" /><category term="email" /><category term="mutt" /><summary type="html"><![CDATA[An address book for the Mutt Email Client.]]></summary></entry><entry><title type="html">Doc To Txt</title><link href="http://localhost:4000/2022/02/15/doc-to-txt/" rel="alternate" type="text/html" title="Doc To Txt" /><published>2022-02-15T00:00:00+00:00</published><updated>2022-02-15T00:00:00+00:00</updated><id>http://localhost:4000/2022/02/15/doc-to-txt</id><content type="html" xml:base="http://localhost:4000/2022/02/15/doc-to-txt/"><![CDATA[<p>Convert a .doc file to a .txt file</p>
-
-<!--more-->
-
-<p>To convert a <em>.doc</em> document to a text file, we use <em>antiword</em>. First install it;</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt install antiword
-</code></pre></div></div>
-
-<p>To convert, run the following command:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>antiword file.doc &gt; file.txt
-</code></pre></div></div>
-
-<p>For <em>.docx</em> we need to use a different programme, <em>docx2txt</em>. First install it;</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get install docx2txt
-</code></pre></div></div>
-
-<p>To convert the document, run the command as follows;</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docx2txt file.docx file.txt
-</code></pre></div></div>]]></content><author><name>Paul Dürnberger</name></author><category term="linux" /><category term="convert" /><category term="document" /><summary type="html"><![CDATA[Convert a .doc file to a .txt file]]></summary></entry><entry><title type="html">Img2pdf</title><link href="http://localhost:4000/2022/01/19/img2pdf/" rel="alternate" type="text/html" title="Img2pdf" /><published>2022-01-19T00:00:00+00:00</published><updated>2022-01-19T00:00:00+00:00</updated><id>http://localhost:4000/2022/01/19/img2pdf</id><content type="html" xml:base="http://localhost:4000/2022/01/19/img2pdf/"><![CDATA[<p>How to convert a number of .jpg images into one PDF document.</p>
-
-<!--more-->
-
-<p>To convert a number of .jpg images into one PDF document, first install img2pdf</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt install img2pdf
-</code></pre></div></div>
-
-<p>To create the document, change to the directory in which the images are located, then run the following command:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>img2pdf 1.jpg 2.jpg 3.jpg -o output.pdf
-</code></pre></div></div>]]></content><author><name>Paul Dürnberger</name></author><category term="linux" /><category term="graphics" /><category term="pdf" /><summary type="html"><![CDATA[How to convert a number of .jpg images into one PDF document.]]></summary></entry></feed>
+<p>Restart mutt, and highlight one of the messages in your inbox. Tap the letter <code class="language-plaintext highlighter-rouge">a</code> and at the bottom of the screen you will be asked what alias you want to assign to the sender of that email. Answer the subsequent questions, and save. The next time you want to email that person, at <code class="language-plaintext highlighter-rouge">To:</code> type in the alias you assigned.</p>]]></content><author><name>Paul Dürnberger</name></author><category term="linux" /><category term="addressbook" /><category term="email" /><category term="mutt" /><summary type="html"><![CDATA[An address book for the Mutt Email Client.]]></summary></entry></feed>

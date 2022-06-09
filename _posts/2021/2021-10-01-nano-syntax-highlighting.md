@@ -20,44 +20,57 @@ Create a new file, `sudo nano /usr/share/nano/markdown.nanorc`,
 and add the following to it.
 
 ```
-syntax "markdown" "\.md$" "\.markdown$"
+syntax "Markdown" "\.(md|mkd|mkdn|markdown)$"
 
-## Quotations
-color cyan "^>.*"
+# Tables (Github extension)
+color cyan ".*[ :]\|[ :].*"
 
-## Emphasis
-color green "_[^_]*_"
-color green "\*[^\*]*\*"
+# quotes
+color yellow  start="^>" end="^$"
+color yellow  "^>.*"
 
-## Strong emphasis
-color brightgreen "\*\*[^\*]*\*\*"
-color brightgreen "__[\_]*__"
+# Emphasis
+color green "(^|[[:space:]])(_[^ ][^_]*_|\*[^ ][^*]*\*)"
 
-## Underline headers
-color brightblue "^====(=*)"
-color brightblue "^----(-*)"
+# Strong emphasis
+color brightgreen "(^|[[:space:]])(__[^ ][^_]*__|\*\*[^ ][^*]*\*\*)"
 
-## Hash headers
-color brightblue "^#.*"
+# strike-through
+color red "(^|[[:space:]])~~[^ ][^~]*~~"
 
-## Linkified URLs (and inline html tags)
-color brightmagenta start="<" end=">"
+# horizontal rules
+color brightmagenta "^(---+|===+|___+|\*\*\*+)\s*$"
 
-## Links
-color brightmagenta "\[.*\](\([^\)]*\))?"
+# headlines
+color brightred  "^#{1,6}.*"
 
-## Link id's:
-color brightmagenta "^\[.*\]:( )+.*"
+# lists
+color cyan   "^[[:space:]]*[\*+-] |^[[:space:]]*[0-9]+\. "
 
-## Code spans
-color brightyellow "`[^`]*`"
+# leading whitespace
+color black    "^[[:space:]]+"
 
-## Links and inline images
-color brightmagenta start="!\[" end="\]"
-color brightmagenta start="\[" end="\]"
+# misc
+color magenta   "\(([CcRr]|[Tt][Mm])\)" "\.{3}" "(^|[[:space:]])\-\-($|[[:space:]])"
 
-## Lists
-color yellow "^( )*(\*|\+|\-|[0-9]+\.) "
+# links
+color brightblue "\[[^]]+\]"
+color brightblue "\[([^][]|\[[^]]*\])*\]\([^)]+\)"
+
+# images
+color magenta "!\[[^][]*\](\([^)]+\)|\[[^]]+\])"
+
+# urls
+color brightyellow "https?://[^ )>]+"
+
+# code
+color yellow   "`[^`]*`|^ {4}[^-+*].*"
+# code blocks
+color yellow start="^```[^$]" end="^```$"
+color yellow "^```$"
+
+## Trailing spaces
+color ,green "[[:space:]]+$"
 
 ```
 
