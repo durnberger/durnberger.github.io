@@ -26,8 +26,8 @@ syntax "Markdown" "\.(md|mkd|mkdn|markdown)$"
 color cyan ".*[ :]\|[ :].*"
 
 # quotes
-color yellow  start="^>" end="^$"
-color yellow  "^>.*"
+color brightyellow  start="^>" end="^$"
+color brightyellow  "^>.*"
 
 # Emphasis
 color green "(^|[[:space:]])(_[^ ][^_]*_|\*[^ ][^*]*\*)"
@@ -66,8 +66,8 @@ color brightyellow "https?://[^ )>]+"
 # code
 color yellow   "`[^`]*`|^ {4}[^-+*].*"
 # code blocks
-color yellow start="^```[^$]" end="^```$"
-color yellow "^```$"
+color brightyellow start="^```[^$]" end="^```$"
+color brightyellow "^```$"
 
 ## Trailing spaces
 color ,green "[[:space:]]+$"
