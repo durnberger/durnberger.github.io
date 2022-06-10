@@ -1,4 +1,41 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-06-09T15:06:50+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Technology</title><subtitle>I write about Linux and Ubuntu, and the FOSS tools available to photographers</subtitle><author><name>Paul Dürnberger</name></author><entry><title type="html">Pandoc Again</title><link href="http://localhost:4000/2022/06/09/pandoc-again/" rel="alternate" type="text/html" title="Pandoc Again" /><published>2022-06-09T00:00:00+01:00</published><updated>2022-06-09T00:00:00+01:00</updated><id>http://localhost:4000/2022/06/09/pandoc-again</id><content type="html" xml:base="http://localhost:4000/2022/06/09/pandoc-again/"><![CDATA[<p>Using pandoc and weasyprint to create a letter template, but this time a little more elegantly!</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-06-10T13:57:58+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Technology</title><subtitle>I write about Linux and Ubuntu, and the FOSS tools available to photographers</subtitle><author><name>Paul Dürnberger</name></author><entry><title type="html">Templates in MC</title><link href="http://localhost:4000/2022/06/10/mc/" rel="alternate" type="text/html" title="Templates in MC" /><published>2022-06-10T00:00:00+01:00</published><updated>2022-06-10T00:00:00+01:00</updated><id>http://localhost:4000/2022/06/10/mc</id><content type="html" xml:base="http://localhost:4000/2022/06/10/mc/"><![CDATA[<p>Now this is clever, and not a capability I had previously been aware of. You can use <code class="language-plaintext highlighter-rouge">Midnight Commander</code> (mc) to create templates.</p>
+
+<!--more-->
+
+<p>I recently happened upon this 
+<a href="http://www.linuxcommand.org/lc3_adv_mc.php" target="_blank">article</a>, which explains the 
+process and which I have found very useful when writing posts like this one.</p>
+
+<p>I create posts within a Jekyll framework, and each post needs to begin with its <code class="language-plaintext highlighter-rouge">frontmatter</code>. 
+This website is not the only one I curate; the requisite frontmatter can be different from 
+site to site and I can’t always remember what information is required for posts made in those 
+different sites. To get around that problem, I have created simple templates specific to the 
+requirements of each website.</p>
+
+<p>Posts are stored (not unsurprisingly) in the folder <code class="language-plaintext highlighter-rouge">_posts</code>. Within that folder I created the file <code class="language-plaintext highlighter-rouge">.mc.menu</code>. The file consists of the following;</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Create a new post
+
+Create a new post
+  { echo "---"
+  echo "title: "
+  echo "layout: post"
+  echo "categories: jekyll, linux, markdown, security"
+  echo "tags: [  ] "
+  echo "---"
+  echo ; } &gt; new-post.md
+</code></pre></div></div>
+
+<p>I have listed all of the <code class="language-plaintext highlighter-rouge">category</code> types I use on this site. I can delete the ones not relevant 
+to the article when I edit the post.</p>
+
+<p>Having saved the file, from within MC make your way to the <code class="language-plaintext highlighter-rouge">_posts</code> folder. Select <code class="language-plaintext highlighter-rouge">F2</code>, and a 
+dialogue box will pop up, giving you the option to <code class="language-plaintext highlighter-rouge">Create a new post</code>. Hit enter, and a file 
+called <code class="language-plaintext highlighter-rouge">new-post.md</code> will appear in the <code class="language-plaintext highlighter-rouge">_posts</code> folder. Select it and change the file name to 
+something more meaningful. Open the file, and within the frontmatter, select the relevant 
+category, add the title and tags and then begin creating your masterpiece.</p>
+
+<p>Yes, very clever indeed!</p>]]></content><author><name>Paul Dürnberger</name></author><category term="jekyll" /><category term="linux" /><category term="midnightcommander" /><category term="templates" /><category term="writing" /><summary type="html"><![CDATA[Now this is clever, and not a capability I had previously been aware of. You can use Midnight Commander (mc) to create templates.]]></summary></entry><entry><title type="html">Pandoc Again</title><link href="http://localhost:4000/2022/06/09/pandoc-again/" rel="alternate" type="text/html" title="Pandoc Again" /><published>2022-06-09T00:00:00+01:00</published><updated>2022-06-09T00:00:00+01:00</updated><id>http://localhost:4000/2022/06/09/pandoc-again</id><content type="html" xml:base="http://localhost:4000/2022/06/09/pandoc-again/"><![CDATA[<p>Using pandoc and weasyprint to create a letter template, but this time a little more elegantly!</p>
 
 <!--more-->
 
@@ -596,19 +633,4 @@ pandoc  <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</s
 <p>To merge the documents, run the following, changing the pdf file names as necessary;</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pdfunite 1.pdf 2.pdf 3.pdf output.pdf
-</code></pre></div></div>]]></content><author><name>Paul Dürnberger</name></author><category term="linux" /><category term="merge" /><category term="pdf" /><summary type="html"><![CDATA[How to merge several PDF’s into one document.]]></summary></entry><entry><title type="html">Mutt Address Book</title><link href="http://localhost:4000/2022/02/18/mutt-address-book/" rel="alternate" type="text/html" title="Mutt Address Book" /><published>2022-02-18T00:00:00+00:00</published><updated>2022-02-18T00:00:00+00:00</updated><id>http://localhost:4000/2022/02/18/mutt-address-book</id><content type="html" xml:base="http://localhost:4000/2022/02/18/mutt-address-book/"><![CDATA[<p>An address book for the Mutt Email Client.</p>
-
-<!--more-->
-
-<p>Something I’ve been meaning to record since <a href="/2021/09/19/mutt-email">setting up the Mutt email client</a> was how I added an address book.</p>
-
-<p>The simplest option is to use Mutt’s alias file. Begin by creating a blank document, <code class="language-plaintext highlighter-rouge">~/.mutt/mutt-alias</code>.</p>
-
-<p>Next we amend <code class="language-plaintext highlighter-rouge">~/.mutt/muttrc</code> to include reference to the alias file, by adding the following;</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Address Book (using ~/.muttrc/mutt-alias)
-source ~/.mutt/mutt-alias
-set alias_file = "~/.mutt/mutt-alias"
-</code></pre></div></div>
-
-<p>Restart mutt, and highlight one of the messages in your inbox. Tap the letter <code class="language-plaintext highlighter-rouge">a</code> and at the bottom of the screen you will be asked what alias you want to assign to the sender of that email. Answer the subsequent questions, and save. The next time you want to email that person, at <code class="language-plaintext highlighter-rouge">To:</code> type in the alias you assigned.</p>]]></content><author><name>Paul Dürnberger</name></author><category term="linux" /><category term="addressbook" /><category term="email" /><category term="mutt" /><summary type="html"><![CDATA[An address book for the Mutt Email Client.]]></summary></entry></feed>
+</code></pre></div></div>]]></content><author><name>Paul Dürnberger</name></author><category term="linux" /><category term="merge" /><category term="pdf" /><summary type="html"><![CDATA[How to merge several PDF’s into one document.]]></summary></entry></feed>
