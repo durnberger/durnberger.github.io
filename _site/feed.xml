@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-06-10T13:57:58+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Technology</title><subtitle>I write about Linux and Ubuntu, and the FOSS tools available to photographers</subtitle><author><name>Paul Dürnberger</name></author><entry><title type="html">Templates in MC</title><link href="http://localhost:4000/2022/06/10/mc/" rel="alternate" type="text/html" title="Templates in MC" /><published>2022-06-10T00:00:00+01:00</published><updated>2022-06-10T00:00:00+01:00</updated><id>http://localhost:4000/2022/06/10/mc</id><content type="html" xml:base="http://localhost:4000/2022/06/10/mc/"><![CDATA[<p>Now this is clever, and not a capability I had previously been aware of. You can use <code class="language-plaintext highlighter-rouge">Midnight Commander</code> (mc) to create templates.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-06-10T19:29:24+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Technology</title><subtitle>I write about Linux and Ubuntu, and the FOSS tools available to photographers</subtitle><author><name>Paul Dürnberger</name></author><entry><title type="html">Templates in MC</title><link href="http://localhost:4000/2022/06/10/mc/" rel="alternate" type="text/html" title="Templates in MC" /><published>2022-06-10T00:00:00+01:00</published><updated>2022-06-10T00:00:00+01:00</updated><id>http://localhost:4000/2022/06/10/mc</id><content type="html" xml:base="http://localhost:4000/2022/06/10/mc/"><![CDATA[<p>Now this is clever, and not a capability I had previously been aware of. You can use <code class="language-plaintext highlighter-rouge">Midnight Commander</code> (mc) to create templates.</p>
 
 <!--more-->
 
@@ -18,10 +18,10 @@ requirements of each website.</p>
 
 Create a new post
   { echo "---"
-  echo "title: "
-  echo "layout: post"
-  echo "categories: jekyll, linux, markdown, security"
-  echo "tags: [  ] "
+  echo "  title: "
+  echo "  layout: post"
+  echo "  categories: jekyll, linux, markdown, security"
+  echo "  tags: [  ] "
   echo "---"
   echo ; } &gt; new-post.md
 </code></pre></div></div>
@@ -35,7 +35,48 @@ called <code class="language-plaintext highlighter-rouge">new-post.md</code> wil
 something more meaningful. Open the file, and within the frontmatter, select the relevant 
 category, add the title and tags and then begin creating your masterpiece.</p>
 
-<p>Yes, very clever indeed!</p>]]></content><author><name>Paul Dürnberger</name></author><category term="jekyll" /><category term="linux" /><category term="midnightcommander" /><category term="templates" /><category term="writing" /><summary type="html"><![CDATA[Now this is clever, and not a capability I had previously been aware of. You can use Midnight Commander (mc) to create templates.]]></summary></entry><entry><title type="html">Pandoc Again</title><link href="http://localhost:4000/2022/06/09/pandoc-again/" rel="alternate" type="text/html" title="Pandoc Again" /><published>2022-06-09T00:00:00+01:00</published><updated>2022-06-09T00:00:00+01:00</updated><id>http://localhost:4000/2022/06/09/pandoc-again</id><content type="html" xml:base="http://localhost:4000/2022/06/09/pandoc-again/"><![CDATA[<p>Using pandoc and weasyprint to create a letter template, but this time a little more elegantly!</p>
+<p>Yes, very clever indeed!</p>]]></content><author><name>Paul Dürnberger</name></author><category term="jekyll" /><category term="linux" /><category term="midnightcommander" /><category term="templates" /><category term="writing" /><summary type="html"><![CDATA[Now this is clever, and not a capability I had previously been aware of. You can use Midnight Commander (mc) to create templates.]]></summary></entry><entry><title type="html">Push to Git from the CLI</title><link href="http://localhost:4000/2022/06/10/push-to-git/" rel="alternate" type="text/html" title="Push to Git from the CLI" /><published>2022-06-10T00:00:00+01:00</published><updated>2022-06-10T00:00:00+01:00</updated><id>http://localhost:4000/2022/06/10/push-to-git</id><content type="html" xml:base="http://localhost:4000/2022/06/10/push-to-git/"><![CDATA[<p>Now that I’m writing posts using <code class="language-plaintext highlighter-rouge">Nano</code>, I needed to figure how to push changes to <code class="language-plaintext highlighter-rouge">GitHub 
+Pages</code> from the command line.</p>
+
+<!--more-->
+
+<h3 id="install-gh">Install gh</h3>
+<p>We need to install <code class="language-plaintext highlighter-rouge">gh</code>. Full instructions can be found 
+<a href="https://github.com/cli/cli/blob/trunk/docs/install_linux.md" target="_blank">here</a>.</p>
+
+<h3 id="login-to-github">Login to GitHub</h3>
+<p>Next, we need to login to GitHub. Begin by changing directory into the directory that holds 
+the local version of your project. Then enter the command</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gh auth login
+</code></pre></div></div>
+
+<p>Follow the instructions.</p>
+
+<h3 id="status">Status</h3>
+<p>Run the command</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git status
+</code></pre></div></div>
+
+<p>This will list unstaged changes which have yet to be committed.</p>
+
+<h3 id="commit">Commit</h3>
+<p>Run the command</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git commit -a
+</code></pre></div></div>
+
+<p>A list of files available to commit will pop up in your text editor, each preceded by a 
+<code class="language-plaintext highlighter-rouge">#</code>. Remove the hash for each file you want to commit, and then save and exit from the list.</p>
+
+<h3 id="push">Push</h3>
+<p>To push the changes to the main branch of the remote repository, run the following;</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git push origin main
+</code></pre></div></div>
+
+<p>Give it a few minutes and you should see the changes appear on your web site.</p>]]></content><author><name>Paul Dürnberger</name></author><category term="linux" /><category term="git" /><summary type="html"><![CDATA[Now that I’m writing posts using Nano, I needed to figure how to push changes to GitHub Pages from the command line.]]></summary></entry><entry><title type="html">Pandoc Again</title><link href="http://localhost:4000/2022/06/09/pandoc-again/" rel="alternate" type="text/html" title="Pandoc Again" /><published>2022-06-09T00:00:00+01:00</published><updated>2022-06-09T00:00:00+01:00</updated><id>http://localhost:4000/2022/06/09/pandoc-again</id><content type="html" xml:base="http://localhost:4000/2022/06/09/pandoc-again/"><![CDATA[<p>Using pandoc and weasyprint to create a letter template, but this time a little more elegantly!</p>
 
 <!--more-->
 
@@ -621,16 +662,4 @@ pandoc  <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</s
 
 <p>The result looks like this: 5’ 9<sup>1</sup>/<sub>4</sub>”.</p>
 
-<p>A lot tidier!</p>]]></content><author><name>Paul Dürnberger</name></author><category term="markdown" /><category term="html" /><category term="subscript" /><category term="superscript" /><summary type="html"><![CDATA[How to use HTML to create sub- and superscript.]]></summary></entry><entry><title type="html">Pdfunite</title><link href="http://localhost:4000/2022/03/26/pdfunite/" rel="alternate" type="text/html" title="Pdfunite" /><published>2022-03-26T00:00:00+00:00</published><updated>2022-03-26T00:00:00+00:00</updated><id>http://localhost:4000/2022/03/26/pdfunite</id><content type="html" xml:base="http://localhost:4000/2022/03/26/pdfunite/"><![CDATA[<p>How to merge several PDF’s into one document.</p>
-
-<!--more-->
-
-<p>To convert several PDf’s into one PDF document, we can use <code class="language-plaintext highlighter-rouge">pdfunite</code>. This is a part of <code class="language-plaintext highlighter-rouge">poppler-utils</code>, which can be installed using the following command;</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt install poppler-utils
-</code></pre></div></div>
-
-<p>To merge the documents, run the following, changing the pdf file names as necessary;</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pdfunite 1.pdf 2.pdf 3.pdf output.pdf
-</code></pre></div></div>]]></content><author><name>Paul Dürnberger</name></author><category term="linux" /><category term="merge" /><category term="pdf" /><summary type="html"><![CDATA[How to merge several PDF’s into one document.]]></summary></entry></feed>
+<p>A lot tidier!</p>]]></content><author><name>Paul Dürnberger</name></author><category term="markdown" /><category term="html" /><category term="subscript" /><category term="superscript" /><summary type="html"><![CDATA[How to use HTML to create sub- and superscript.]]></summary></entry></feed>
