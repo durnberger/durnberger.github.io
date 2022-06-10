@@ -33,8 +33,15 @@ git status
 
 This will list unstaged changes which have yet to be committed. 
 
+### Unstaged Files
+Add any newly created files to the unstaged list using the command
+
+```
+git add .
+```
+
 ### Commit
-Run the command
+To commit changes, run the command
 
 ```
 git commit -a

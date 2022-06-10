@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-06-10T19:29:24+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Technology</title><subtitle>I write about Linux and Ubuntu, and the FOSS tools available to photographers</subtitle><author><name>Paul Dürnberger</name></author><entry><title type="html">Templates in MC</title><link href="http://localhost:4000/2022/06/10/mc/" rel="alternate" type="text/html" title="Templates in MC" /><published>2022-06-10T00:00:00+01:00</published><updated>2022-06-10T00:00:00+01:00</updated><id>http://localhost:4000/2022/06/10/mc</id><content type="html" xml:base="http://localhost:4000/2022/06/10/mc/"><![CDATA[<p>Now this is clever, and not a capability I had previously been aware of. You can use <code class="language-plaintext highlighter-rouge">Midnight Commander</code> (mc) to create templates.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-06-10T20:04:57+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Technology</title><subtitle>I write about Linux and Ubuntu, and the FOSS tools available to photographers</subtitle><author><name>Paul Dürnberger</name></author><entry><title type="html">Templates in MC</title><link href="http://localhost:4000/2022/06/10/mc/" rel="alternate" type="text/html" title="Templates in MC" /><published>2022-06-10T00:00:00+01:00</published><updated>2022-06-10T00:00:00+01:00</updated><id>http://localhost:4000/2022/06/10/mc</id><content type="html" xml:base="http://localhost:4000/2022/06/10/mc/"><![CDATA[<p>Now this is clever, and not a capability I had previously been aware of. You can use <code class="language-plaintext highlighter-rouge">Midnight Commander</code> (mc) to create templates.</p>
 
 <!--more-->
 
@@ -61,8 +61,14 @@ the local version of your project. Then enter the command</p>
 
 <p>This will list unstaged changes which have yet to be committed.</p>
 
+<h3 id="unstaged-files">Unstaged Files</h3>
+<p>Add any newly created files to the unstaged list using the command</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add .
+</code></pre></div></div>
+
 <h3 id="commit">Commit</h3>
-<p>Run the command</p>
+<p>To commit changes, run the command</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git commit -a
 </code></pre></div></div>
