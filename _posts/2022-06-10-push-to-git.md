@@ -31,7 +31,7 @@ Run the command
 git status
 ```
 
-This will list unstaged changes which have yet to be committed. 
+This will list the files yet to be committed. 
 
 ### Unstaged Files
 Add any newly created files to the unstaged list using the command
@@ -41,7 +41,7 @@ git add .
 ```
 
 ### Commit
-To commit changes, run the command
+To commit the changes, run the command
 
 ```
 git commit -a
