@@ -90,90 +90,90 @@ select filename in ${files};
 
 <p>Much neater!</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
-<span class="c">#</span>
-<span class="c"># ~/bin/write2pdf.sh</span>
-<span class="c">#</span>
-<span class="c"># With thanks to:</span>
-<span class="c"># https://linuxconfig.org/how-to-create-a-selection-menu-using-the-select-statement-in-bash-shell</span>
-<span class="c">#</span>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#!/bin/bash
+#
+# ~/bin/write2pdf.sh
+#
+# With thanks to:
+# https://linuxconfig.org/how-to-create-a-selection-menu-using-the-select-statement-in-bash-shell
+#
 
-<span class="nb">cd</span> /home/<span class="nv">$USER</span>/Correspondence
+cd /home/$USER/Correspondence
 
-<span class="c"># Choose from letter, memo or note</span>
-<span class="c">#</span>
-<span class="nb">echo</span> <span class="s2">"Are you writing a letter, memo or note?"</span>
-<span class="nb">echo</span> <span class="s2">"1) Letter"</span>
-<span class="nb">echo</span> <span class="s2">"2) Memo"</span>
-<span class="nb">echo</span> <span class="s2">"3) Note"</span>
-<span class="nb">read </span>choice
-
-
-<span class="k">if</span> <span class="o">[</span> <span class="s2">"</span><span class="nv">$choice</span><span class="s2">"</span> <span class="o">==</span> <span class="s2">"1"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-<span class="c"># Letter</span>
-
-	<span class="nv">PS3</span><span class="o">=</span><span class="s2">"Select a file:"</span>
-
-	<span class="nv">files</span><span class="o">=</span><span class="s2">"</span><span class="si">$(</span><span class="nb">ls</span> <span class="nt">--file-type</span> <span class="k">*</span>.md<span class="si">)</span><span class="s2">"</span>
-
-	<span class="k">select </span>filename <span class="k">in</span> <span class="k">${</span><span class="nv">files</span><span class="k">}</span><span class="p">;</span>
-
-		<span class="k">do
-
-		</span><span class="nv">stem</span><span class="o">=</span><span class="si">$(</span><span class="nb">basename</span> <span class="k">${</span><span class="nv">filename</span><span class="k">}</span> .md<span class="si">)</span>
-
-		pandoc <span class="nt">-f</span> markdown <span class="nt">--include-before-body</span> layout/header-letter.html <span class="nt">--include-after-body</span> layout/footer.html <span class="nt">--metadata</span> <span class="nv">pagetitle</span><span class="o">=</span><span class="s2">"</span><span class="nv">$stem</span><span class="s2">"</span> <span class="nt">--metadata</span> <span class="nv">lang</span><span class="o">=</span><span class="s2">"en-GB"</span> <span class="nt">--pdf-engine</span> weasyprint <span class="nt">--css</span> style/style.css <span class="k">${</span><span class="nv">filename</span><span class="k">}</span> <span class="nt">-o</span> <span class="nv">$stem</span>.pdf
-
-			<span class="nb">break</span><span class="p">;</span>
-
-		<span class="k">done</span>
-<span class="c"># End of letter</span>
+# Choose from letter, memo or note
+#
+echo "Are you writing a letter, memo or note?"
+echo "1) Letter"
+echo "2) Memo"
+echo "3) Note"
+read choice
 
 
+if [ "$choice" == "1" ]; then
+# Letter
 
+	PS3="Select a file:"
 
-<span class="k">elif</span> <span class="o">[</span> <span class="s2">"</span><span class="nv">$choice</span><span class="s2">"</span> <span class="o">==</span> <span class="s2">"2"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-<span class="c"># Memo</span>
+	files="$(ls --file-type *.md)"
 
-	<span class="nv">PS3</span><span class="o">=</span><span class="s2">"Select a file:"</span>
+	select filename in ${files};
 
-	<span class="nv">files</span><span class="o">=</span><span class="s2">"</span><span class="si">$(</span><span class="nb">ls</span> <span class="nt">--file-type</span> <span class="k">*</span>.md<span class="si">)</span><span class="s2">"</span>
+		do
 
-	<span class="k">select </span>filename <span class="k">in</span> <span class="k">${</span><span class="nv">files</span><span class="k">}</span><span class="p">;</span>
+		stem=$(basename ${filename} .md)
 
-		<span class="k">do
+		pandoc -f markdown --include-before-body layout/header-letter.html --include-after-body layout/footer.html --metadata pagetitle="$stem" --metadata lang="en-GB" --pdf-engine weasyprint --css style/style.css ${filename} -o $stem.pdf
 
-		</span><span class="nv">stem</span><span class="o">=</span><span class="si">$(</span><span class="nb">basename</span> <span class="k">${</span><span class="nv">filename</span><span class="k">}</span> .md<span class="si">)</span>
+			break;
 
-		pandoc <span class="nt">-f</span> markdown <span class="nt">--include-before-body</span> layout/header-memo.html <span class="nt">--include-after-body</span> layout/footer.html <span class="nt">--metadata</span> <span class="nv">pagetitle</span><span class="o">=</span><span class="s2">"</span><span class="nv">$stem</span><span class="s2">"</span> <span class="nt">--metadata</span> <span class="nv">lang</span><span class="o">=</span><span class="s2">"en-GB"</span> <span class="nt">--pdf-engine</span> weasyprint <span class="nt">--css</span> style/style.css <span class="k">${</span><span class="nv">filename</span><span class="k">}</span> <span class="nt">-o</span> <span class="nv">$stem</span>.pdf
-
-			<span class="nb">break</span><span class="p">;</span>
-
-		<span class="k">done</span>
-<span class="c"># End of memo</span>
+		done
+# End of letter
 
 
 
-<span class="k">else</span>
-<span class="c"># Note</span>
-	<span class="nv">PS3</span><span class="o">=</span><span class="s2">"Select a file:"</span>
 
-	<span class="nv">files</span><span class="o">=</span><span class="s2">"</span><span class="si">$(</span><span class="nb">ls</span> <span class="nt">--file-type</span> <span class="k">*</span>.md<span class="si">)</span><span class="s2">"</span>
+elif [ "$choice" == "2" ]; then
+# Memo
 
-	<span class="k">select </span>filename <span class="k">in</span> <span class="k">${</span><span class="nv">files</span><span class="k">}</span><span class="p">;</span>
+	PS3="Select a file:"
 
-		<span class="k">do
+	files="$(ls --file-type *.md)"
 
-		</span><span class="nv">stem</span><span class="o">=</span><span class="si">$(</span><span class="nb">basename</span> <span class="k">${</span><span class="nv">filename</span><span class="k">}</span> .md<span class="si">)</span>
+	select filename in ${files};
 
-		pandoc <span class="nt">-f</span> markdown <span class="nt">--include-before-body</span> layout/header-note.html <span class="nt">--include-after-body</span> layout/footer.html <span class="nt">--metadata</span> <span class="nv">pagetitle</span><span class="o">=</span><span class="s2">"</span><span class="nv">$stem</span><span class="s2">"</span> <span class="nt">--metadata</span> <span class="nv">lang</span><span class="o">=</span><span class="s2">"en-GB"</span> <span class="nt">--pdf-engine</span> weasyprint <span class="nt">--css</span> style/style.css <span class="k">${</span><span class="nv">filename</span><span class="k">}</span> <span class="nt">-o</span> <span class="nv">$stem</span>.pdf
+		do
 
-			<span class="nb">break</span><span class="p">;</span>
+		stem=$(basename ${filename} .md)
 
-		<span class="k">done</span>
-<span class="c"># End of note</span>
+		pandoc -f markdown --include-before-body layout/header-memo.html --include-after-body layout/footer.html --metadata pagetitle="$stem" --metadata lang="en-GB" --pdf-engine weasyprint --css style/style.css ${filename} -o $stem.pdf
 
-<span class="k">fi</span>
+			break;
+
+		done
+# End of memo
+
+
+
+else
+# Note
+	PS3="Select a file:"
+
+	files="$(ls --file-type *.md)"
+
+	select filename in ${files};
+
+		do
+
+		stem=$(basename ${filename} .md)
+
+		pandoc -f markdown --include-before-body layout/header-note.html --include-after-body layout/footer.html --metadata pagetitle="$stem" --metadata lang="en-GB" --pdf-engine weasyprint --css style/style.css ${filename} -o $stem.pdf
+
+			break;
+
+		done
+# End of note
+
+fi
 </code></pre></div></div>
 
 <p>With thanks to <a href="https://linuxconfig.org/how-to-create-a-selection-menu-using-the-select-statement-in-bash-shell" target="_blank">Linuxconfig.org</a> for setting me on the right track.</p>

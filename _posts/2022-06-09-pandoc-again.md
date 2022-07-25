@@ -25,7 +25,7 @@ The first line lists the markdown files in the given directory, whilst the secon
 
 Much neater!
 
-```bash
+```
 #!/bin/bash
 #
 # ~/bin/write2pdf.sh

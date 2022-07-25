@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-06-10T20:07:49+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Technology</title><subtitle>I write about Linux and Ubuntu, and the FOSS tools available to photographers</subtitle><author><name>Paul Dürnberger</name></author><entry><title type="html">Templates in MC</title><link href="http://localhost:4000/2022/06/10/mc/" rel="alternate" type="text/html" title="Templates in MC" /><published>2022-06-10T00:00:00+01:00</published><updated>2022-06-10T00:00:00+01:00</updated><id>http://localhost:4000/2022/06/10/mc</id><content type="html" xml:base="http://localhost:4000/2022/06/10/mc/"><![CDATA[<p>Now this is clever, and not a capability I had previously been aware of. You can use <code class="language-plaintext highlighter-rouge">Midnight Commander</code> (mc) to create templates.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-06-10T23:22:12+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Technology</title><subtitle>I write about Linux and Ubuntu, and the FOSS tools available to photographers</subtitle><author><name>Paul Dürnberger</name></author><entry><title type="html">Templates in MC</title><link href="http://localhost:4000/2022/06/10/mc/" rel="alternate" type="text/html" title="Templates in MC" /><published>2022-06-10T00:00:00+01:00</published><updated>2022-06-10T00:00:00+01:00</updated><id>http://localhost:4000/2022/06/10/mc</id><content type="html" xml:base="http://localhost:4000/2022/06/10/mc/"><![CDATA[<p>Now this is clever, and not a capability I had previously been aware of. You can use <code class="language-plaintext highlighter-rouge">Midnight Commander</code> (mc) to create templates.</p>
 
 <!--more-->
 
@@ -35,18 +35,16 @@ called <code class="language-plaintext highlighter-rouge">new-post.md</code> wil
 something more meaningful. Open the file, and within the frontmatter, select the relevant 
 category, add the title and tags and then begin creating your masterpiece.</p>
 
-<p>Yes, very clever indeed!</p>]]></content><author><name>Paul Dürnberger</name></author><category term="jekyll" /><category term="linux" /><category term="midnightcommander" /><category term="templates" /><category term="writing" /><summary type="html"><![CDATA[Now this is clever, and not a capability I had previously been aware of. You can use Midnight Commander (mc) to create templates.]]></summary></entry><entry><title type="html">Push to Git from the CLI</title><link href="http://localhost:4000/2022/06/10/push-to-git/" rel="alternate" type="text/html" title="Push to Git from the CLI" /><published>2022-06-10T00:00:00+01:00</published><updated>2022-06-10T00:00:00+01:00</updated><id>http://localhost:4000/2022/06/10/push-to-git</id><content type="html" xml:base="http://localhost:4000/2022/06/10/push-to-git/"><![CDATA[<p>Now that I’m writing posts using <code class="language-plaintext highlighter-rouge">Nano</code>, I needed to figure how to push changes to <code class="language-plaintext highlighter-rouge">GitHub 
-Pages</code> from the command line.</p>
+<p>Yes, very clever indeed!</p>]]></content><author><name>Paul Dürnberger</name></author><category term="jekyll" /><category term="linux" /><category term="midnightcommander" /><category term="templates" /><category term="writing" /><summary type="html"><![CDATA[Now this is clever, and not a capability I had previously been aware of. You can use Midnight Commander (mc) to create templates.]]></summary></entry><entry><title type="html">Push to Git from the CLI</title><link href="http://localhost:4000/2022/06/10/push-to-git/" rel="alternate" type="text/html" title="Push to Git from the CLI" /><published>2022-06-10T00:00:00+01:00</published><updated>2022-06-10T00:00:00+01:00</updated><id>http://localhost:4000/2022/06/10/push-to-git</id><content type="html" xml:base="http://localhost:4000/2022/06/10/push-to-git/"><![CDATA[<p>Now that I’m writing posts using <code class="language-plaintext highlighter-rouge">Nano</code>, I needed to figure how to push changes to <code class="language-plaintext highlighter-rouge">GitHub Pages</code> from the command line.</p>
 
 <!--more-->
 
 <h3 id="install-gh">Install gh</h3>
-<p>We need to install <code class="language-plaintext highlighter-rouge">gh</code>. Full instructions can be found 
+<p>We need to install <code class="language-plaintext highlighter-rouge">gh</code>. Full instructions can be found
 <a href="https://github.com/cli/cli/blob/trunk/docs/install_linux.md" target="_blank">here</a>.</p>
 
 <h3 id="login-to-github">Login to GitHub</h3>
-<p>Next, we need to login to GitHub. Begin by changing directory into the directory that holds 
-the local version of your project. Then enter the command</p>
+<p>Next, we need to login to GitHub. Begin by changing directory into the directory that holds the local version of your project. Then enter the command</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gh auth login
 </code></pre></div></div>
@@ -66,6 +64,7 @@ the local version of your project. Then enter the command</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add .
 </code></pre></div></div>
+<p>Note the dot after <code class="language-plaintext highlighter-rouge">add</code>.</p>
 
 <h3 id="commit">Commit</h3>
 <p>To commit the changes, run the command</p>
@@ -73,8 +72,7 @@ the local version of your project. Then enter the command</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git commit -a
 </code></pre></div></div>
 
-<p>A list of files available to commit will pop up in your text editor, each preceded by a 
-<code class="language-plaintext highlighter-rouge">#</code>. Remove the hash for each file you want to commit, and then save and exit from the list.</p>
+<p>A list of files available to commit will pop up in your text editor, each preceded by a <code class="language-plaintext highlighter-rouge">#</code>. Remove the hash for each file you want to commit, and then save and exit from the list.</p>
 
 <h3 id="push">Push</h3>
 <p>To push the changes to the main branch of the remote repository, run the following;</p>
@@ -101,90 +99,90 @@ select filename in ${files};
 
 <p>Much neater!</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
-<span class="c">#</span>
-<span class="c"># ~/bin/write2pdf.sh</span>
-<span class="c">#</span>
-<span class="c"># With thanks to:</span>
-<span class="c"># https://linuxconfig.org/how-to-create-a-selection-menu-using-the-select-statement-in-bash-shell</span>
-<span class="c">#</span>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#!/bin/bash
+#
+# ~/bin/write2pdf.sh
+#
+# With thanks to:
+# https://linuxconfig.org/how-to-create-a-selection-menu-using-the-select-statement-in-bash-shell
+#
 
-<span class="nb">cd</span> /home/<span class="nv">$USER</span>/Correspondence
+cd /home/$USER/Correspondence
 
-<span class="c"># Choose from letter, memo or note</span>
-<span class="c">#</span>
-<span class="nb">echo</span> <span class="s2">"Are you writing a letter, memo or note?"</span>
-<span class="nb">echo</span> <span class="s2">"1) Letter"</span>
-<span class="nb">echo</span> <span class="s2">"2) Memo"</span>
-<span class="nb">echo</span> <span class="s2">"3) Note"</span>
-<span class="nb">read </span>choice
-
-
-<span class="k">if</span> <span class="o">[</span> <span class="s2">"</span><span class="nv">$choice</span><span class="s2">"</span> <span class="o">==</span> <span class="s2">"1"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-<span class="c"># Letter</span>
-
-	<span class="nv">PS3</span><span class="o">=</span><span class="s2">"Select a file:"</span>
-
-	<span class="nv">files</span><span class="o">=</span><span class="s2">"</span><span class="si">$(</span><span class="nb">ls</span> <span class="nt">--file-type</span> <span class="k">*</span>.md<span class="si">)</span><span class="s2">"</span>
-
-	<span class="k">select </span>filename <span class="k">in</span> <span class="k">${</span><span class="nv">files</span><span class="k">}</span><span class="p">;</span>
-
-		<span class="k">do
-
-		</span><span class="nv">stem</span><span class="o">=</span><span class="si">$(</span><span class="nb">basename</span> <span class="k">${</span><span class="nv">filename</span><span class="k">}</span> .md<span class="si">)</span>
-
-		pandoc <span class="nt">-f</span> markdown <span class="nt">--include-before-body</span> layout/header-letter.html <span class="nt">--include-after-body</span> layout/footer.html <span class="nt">--metadata</span> <span class="nv">pagetitle</span><span class="o">=</span><span class="s2">"</span><span class="nv">$stem</span><span class="s2">"</span> <span class="nt">--metadata</span> <span class="nv">lang</span><span class="o">=</span><span class="s2">"en-GB"</span> <span class="nt">--pdf-engine</span> weasyprint <span class="nt">--css</span> style/style.css <span class="k">${</span><span class="nv">filename</span><span class="k">}</span> <span class="nt">-o</span> <span class="nv">$stem</span>.pdf
-
-			<span class="nb">break</span><span class="p">;</span>
-
-		<span class="k">done</span>
-<span class="c"># End of letter</span>
+# Choose from letter, memo or note
+#
+echo "Are you writing a letter, memo or note?"
+echo "1) Letter"
+echo "2) Memo"
+echo "3) Note"
+read choice
 
 
+if [ "$choice" == "1" ]; then
+# Letter
 
+	PS3="Select a file:"
 
-<span class="k">elif</span> <span class="o">[</span> <span class="s2">"</span><span class="nv">$choice</span><span class="s2">"</span> <span class="o">==</span> <span class="s2">"2"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-<span class="c"># Memo</span>
+	files="$(ls --file-type *.md)"
 
-	<span class="nv">PS3</span><span class="o">=</span><span class="s2">"Select a file:"</span>
+	select filename in ${files};
 
-	<span class="nv">files</span><span class="o">=</span><span class="s2">"</span><span class="si">$(</span><span class="nb">ls</span> <span class="nt">--file-type</span> <span class="k">*</span>.md<span class="si">)</span><span class="s2">"</span>
+		do
 
-	<span class="k">select </span>filename <span class="k">in</span> <span class="k">${</span><span class="nv">files</span><span class="k">}</span><span class="p">;</span>
+		stem=$(basename ${filename} .md)
 
-		<span class="k">do
+		pandoc -f markdown --include-before-body layout/header-letter.html --include-after-body layout/footer.html --metadata pagetitle="$stem" --metadata lang="en-GB" --pdf-engine weasyprint --css style/style.css ${filename} -o $stem.pdf
 
-		</span><span class="nv">stem</span><span class="o">=</span><span class="si">$(</span><span class="nb">basename</span> <span class="k">${</span><span class="nv">filename</span><span class="k">}</span> .md<span class="si">)</span>
+			break;
 
-		pandoc <span class="nt">-f</span> markdown <span class="nt">--include-before-body</span> layout/header-memo.html <span class="nt">--include-after-body</span> layout/footer.html <span class="nt">--metadata</span> <span class="nv">pagetitle</span><span class="o">=</span><span class="s2">"</span><span class="nv">$stem</span><span class="s2">"</span> <span class="nt">--metadata</span> <span class="nv">lang</span><span class="o">=</span><span class="s2">"en-GB"</span> <span class="nt">--pdf-engine</span> weasyprint <span class="nt">--css</span> style/style.css <span class="k">${</span><span class="nv">filename</span><span class="k">}</span> <span class="nt">-o</span> <span class="nv">$stem</span>.pdf
-
-			<span class="nb">break</span><span class="p">;</span>
-
-		<span class="k">done</span>
-<span class="c"># End of memo</span>
+		done
+# End of letter
 
 
 
-<span class="k">else</span>
-<span class="c"># Note</span>
-	<span class="nv">PS3</span><span class="o">=</span><span class="s2">"Select a file:"</span>
 
-	<span class="nv">files</span><span class="o">=</span><span class="s2">"</span><span class="si">$(</span><span class="nb">ls</span> <span class="nt">--file-type</span> <span class="k">*</span>.md<span class="si">)</span><span class="s2">"</span>
+elif [ "$choice" == "2" ]; then
+# Memo
 
-	<span class="k">select </span>filename <span class="k">in</span> <span class="k">${</span><span class="nv">files</span><span class="k">}</span><span class="p">;</span>
+	PS3="Select a file:"
 
-		<span class="k">do
+	files="$(ls --file-type *.md)"
 
-		</span><span class="nv">stem</span><span class="o">=</span><span class="si">$(</span><span class="nb">basename</span> <span class="k">${</span><span class="nv">filename</span><span class="k">}</span> .md<span class="si">)</span>
+	select filename in ${files};
 
-		pandoc <span class="nt">-f</span> markdown <span class="nt">--include-before-body</span> layout/header-note.html <span class="nt">--include-after-body</span> layout/footer.html <span class="nt">--metadata</span> <span class="nv">pagetitle</span><span class="o">=</span><span class="s2">"</span><span class="nv">$stem</span><span class="s2">"</span> <span class="nt">--metadata</span> <span class="nv">lang</span><span class="o">=</span><span class="s2">"en-GB"</span> <span class="nt">--pdf-engine</span> weasyprint <span class="nt">--css</span> style/style.css <span class="k">${</span><span class="nv">filename</span><span class="k">}</span> <span class="nt">-o</span> <span class="nv">$stem</span>.pdf
+		do
 
-			<span class="nb">break</span><span class="p">;</span>
+		stem=$(basename ${filename} .md)
 
-		<span class="k">done</span>
-<span class="c"># End of note</span>
+		pandoc -f markdown --include-before-body layout/header-memo.html --include-after-body layout/footer.html --metadata pagetitle="$stem" --metadata lang="en-GB" --pdf-engine weasyprint --css style/style.css ${filename} -o $stem.pdf
 
-<span class="k">fi</span>
+			break;
+
+		done
+# End of memo
+
+
+
+else
+# Note
+	PS3="Select a file:"
+
+	files="$(ls --file-type *.md)"
+
+	select filename in ${files};
+
+		do
+
+		stem=$(basename ${filename} .md)
+
+		pandoc -f markdown --include-before-body layout/header-note.html --include-after-body layout/footer.html --metadata pagetitle="$stem" --metadata lang="en-GB" --pdf-engine weasyprint --css style/style.css ${filename} -o $stem.pdf
+
+			break;
+
+		done
+# End of note
+
+fi
 </code></pre></div></div>
 
 <p>With thanks to <a href="https://linuxconfig.org/how-to-create-a-selection-menu-using-the-select-statement-in-bash-shell" target="_blank">Linuxconfig.org</a> for setting me on the right track.</p>]]></content><author><name>Paul Dürnberger</name></author><category term="linux" /><category term="bash" /><category term="pandoc" /><category term="pdf" /><category term="weasyprint" /><summary type="html"><![CDATA[Using pandoc and weasyprint to create a letter template, but this time a little more elegantly!]]></summary></entry><entry><title type="html">i3blocks</title><link href="http://localhost:4000/2022/06/03/i3blocks/" rel="alternate" type="text/html" title="i3blocks" /><published>2022-06-03T00:00:00+01:00</published><updated>2022-06-03T00:00:00+01:00</updated><id>http://localhost:4000/2022/06/03/i3blocks</id><content type="html" xml:base="http://localhost:4000/2022/06/03/i3blocks/"><![CDATA[<p>As an alternative to the i3status bar, we have i3blocks.</p>
