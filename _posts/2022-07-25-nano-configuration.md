@@ -9,27 +9,38 @@ tags:
 ### ~/.nanorc
 
 ```
-# Syntax Highlights
+## Syntax Highlights
+#
 include "/usr/share/nano/*.nanorc"
 
-# Options
+## Writing Options
+#
 set tabsize 2
 set tabstospaces
-set autoindent
 set trimblanks
 set linenumbers
 set constantshow
-set titlecolor red,white
+set mouse           # enable mouse support
+set smarthome       # 'Home' jumps to line start first
+set afterends       # 'Ctrl+Right' move to word ends instead of word starts
+set wordchars "_"   # recognize '_' as part of a word
+set matchbrackets "(<[{)>]}"
+set wordbounds      # treat punctuation as part of words
+set softwrap
+set atblanks        # when softwrap is set, wrap lines at blanks
+set autoindent      # indent new line to match line above
+set speller "aspell -x -c"
+set zap             # backspace or del to erase marked region
+
+## Colour Options
+#
+#set titlecolor red,white
 set keycolor black,white  # colors in the help panel
 set functioncolor white   # colors in the help panel
 set numbercolor yellow
-set mouse           # enable mouse support
-set smarthome       # `Home` jumps to line start first
-set afterends       # `Ctrl+Right` move to word ends instead of word starts
-set wordchars "_"   # recognize '_' as part of a word
-set softwrap
 
-# Keybindings
+## Keybindings
+#
 unbind ^C main
 unbind ^X main
 unbind ^V main

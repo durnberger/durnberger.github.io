@@ -1,4 +1,84 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-06-10T23:22:12+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Technology</title><subtitle>I write about Linux and Ubuntu, and the FOSS tools available to photographers</subtitle><author><name>Paul Dürnberger</name></author><entry><title type="html">Templates in MC</title><link href="http://localhost:4000/2022/06/10/mc/" rel="alternate" type="text/html" title="Templates in MC" /><published>2022-06-10T00:00:00+01:00</published><updated>2022-06-10T00:00:00+01:00</updated><id>http://localhost:4000/2022/06/10/mc</id><content type="html" xml:base="http://localhost:4000/2022/06/10/mc/"><![CDATA[<p>Now this is clever, and not a capability I had previously been aware of. You can use <code class="language-plaintext highlighter-rouge">Midnight Commander</code> (mc) to create templates.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-07-26T18:22:20+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Technology</title><subtitle>I write about Linux and Ubuntu, and the FOSS tools available to photographers</subtitle><author><name>Paul Dürnberger</name></author><entry><title type="html">Nano Configuration</title><link href="http://localhost:4000/2022/07/25/nano-configuration/" rel="alternate" type="text/html" title="Nano Configuration" /><published>2022-07-25T00:00:00+01:00</published><updated>2022-07-25T00:00:00+01:00</updated><id>http://localhost:4000/2022/07/25/nano-configuration</id><content type="html" xml:base="http://localhost:4000/2022/07/25/nano-configuration/"><![CDATA[<h3 id="nanorc">~/.nanorc</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Syntax Highlights
+include "/usr/share/nano/*.nanorc"
+
+# Options
+set tabsize 2
+set tabstospaces
+set autoindent
+set trimblanks
+set linenumbers
+set constantshow
+set titlecolor red,white
+set keycolor black,white  # colors in the help panel
+set functioncolor white   # colors in the help panel
+set numbercolor yellow
+set mouse           # enable mouse support
+set smarthome       # `Home` jumps to line start first
+set afterends       # `Ctrl+Right` move to word ends instead of word starts
+set wordchars "_"   # recognize '_' as part of a word
+set softwrap
+
+# Keybindings
+unbind ^C main
+unbind ^X main
+unbind ^V main
+unbind ^K main
+unbind ^S main
+unbind ^Q main
+
+bind ^C   copy          main
+bind ^X   cut           main
+bind ^V   paste         main
+bind ^K   zap           main  # deletes all selected text
+bind ^S   writeout      all   # save file
+bind ^Q   exit          all
+
+</code></pre></div></div>
+
+<h3 id="markdown-syntax-highlighting">Markdown Syntax Highlighting</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>syntax "markdown" "\.md$" "\.markdown$"
+
+## Quotations
+color yellow "^&gt;.*"
+
+## Emphasis
+color brightmagenta "_[^_]*_"
+color brightmagenta "\*[^\*]*\*"
+
+## Strong emphasis
+color brightgreen "\*\*[^\*]*\*\*"
+color brightgreen "__[\_]*__"
+
+## Underline headers
+color brightblue "^====(=*)"
+color brightblue "^----(-*)"
+
+## Hash headers
+color brightblue "^#.*"
+
+## Linkified URLs (and inline html tags)
+color brightblue start="&lt;" end="&gt;"
+
+## Links
+color brightblue "\[.*\](\([^\)]*\))?"
+
+## Link id's:
+color brightmagenta "^\[.*\]:( )+.*"
+
+## Code spans
+color brightyellow "`[^`]*`"
+
+## Links and inline images
+color brightmagenta start="!\[" end="\]"
+color brightmagenta start="\[" end="\]"
+
+## Lists
+color yellow "^( )*(\*|\+|\-|[0-9]+\.) "
+
+</code></pre></div></div>]]></content><author><name>Paul Dürnberger</name></author><category term="linux" /><category term="nano" /><summary type="html"><![CDATA[~/.nanorc # Syntax Highlights include "/usr/share/nano/*.nanorc" # Options set tabsize 2 set tabstospaces set autoindent set trimblanks set linenumbers set constantshow set titlecolor red,white set keycolor black,white # colors in the help panel set functioncolor white # colors in the help panel set numbercolor yellow set mouse # enable mouse support set smarthome # `Home` jumps to line start first set afterends # `Ctrl+Right` move to word ends instead of word starts set wordchars "_" # recognize '_' as part of a word set softwrap # Keybindings unbind ^C main unbind ^X main unbind ^V main unbind ^K main unbind ^S main unbind ^Q main bind ^C copy main bind ^X cut main bind ^V paste main bind ^K zap main # deletes all selected text bind ^S writeout all # save file bind ^Q exit all Markdown Syntax Highlighting syntax "markdown" "\.md$" "\.markdown$" ## Quotations color yellow "^&gt;.*" ## Emphasis color brightmagenta "_[^_]*_" color brightmagenta "\*[^\*]*\*" ## Strong emphasis color brightgreen "\*\*[^\*]*\*\*" color brightgreen "__[\_]*__" ## Underline headers color brightblue "^====(=*)" color brightblue "^----(-*)" ## Hash headers color brightblue "^#.*" ## Linkified URLs (and inline html tags) color brightblue start="&lt;" end="&gt;" ## Links color brightblue "\[.*\](\([^\)]*\))?" ## Link id's: color brightmagenta "^\[.*\]:( )+.*" ## Code spans color brightyellow "`[^`]*`" ## Links and inline images color brightmagenta start="!\[" end="\]" color brightmagenta start="\[" end="\]" ## Lists color yellow "^( )*(\*|\+|\-|[0-9]+\.) "]]></summary></entry><entry><title type="html">Templates in MC</title><link href="http://localhost:4000/2022/06/10/mc/" rel="alternate" type="text/html" title="Templates in MC" /><published>2022-06-10T00:00:00+01:00</published><updated>2022-06-10T00:00:00+01:00</updated><id>http://localhost:4000/2022/06/10/mc</id><content type="html" xml:base="http://localhost:4000/2022/06/10/mc/"><![CDATA[<p>Now this is clever, and not a capability I had previously been aware of. You can use <code class="language-plaintext highlighter-rouge">Midnight Commander</code> (mc) to create templates.</p>
 
 <!--more-->
 
@@ -651,19 +731,4 @@ pandoc  <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</s
 
 <p>The script will look for any files with the <code class="language-plaintext highlighter-rouge">.dot</code> suffix in the designated folder. The <code class="language-plaintext highlighter-rouge">basename</code> command will then strip the <code class="language-plaintext highlighter-rouge">.dot</code> suffix from the file name.</p>
 
-<p>The final line is the command to convert the <code class="language-plaintext highlighter-rouge">.dot</code> files found into the <code class="language-plaintext highlighter-rouge">.svg</code> format, and save the converted files with the same file name as the source, but with an <code class="language-plaintext highlighter-rouge">svg</code> suffix.</p>]]></content><author><name>Paul Dürnberger</name></author><category term="linux" /><category term="bash" /><category term="loop" /><summary type="html"><![CDATA[A simple process to convert a batch of .dot diagrams into the .svg format using a for loop.]]></summary></entry><entry><title type="html">Superscript</title><link href="http://localhost:4000/2022/04/06/superscript/" rel="alternate" type="text/html" title="Superscript" /><published>2022-04-06T00:00:00+01:00</published><updated>2022-04-06T00:00:00+01:00</updated><id>http://localhost:4000/2022/04/06/superscript</id><content type="html" xml:base="http://localhost:4000/2022/04/06/superscript/"><![CDATA[<p>How to use HTML to create sub- and superscript.</p>
-
-<!--more-->
-
-<p>Imagine you’re writing about someone who is 5foot 9 and a quarter inches in height.</p>
-
-<p>Written numerically, 5’ 91/4”, which does not look right.</p>
-
-<p>To ensure the quarter displays correctly, type the following;</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>5' 9&lt;sup&gt;1&lt;/sup&gt;/&lt;sub&gt;4&lt;/sub&gt;"
-</code></pre></div></div>
-
-<p>The result looks like this: 5’ 9<sup>1</sup>/<sub>4</sub>”.</p>
-
-<p>A lot tidier!</p>]]></content><author><name>Paul Dürnberger</name></author><category term="markdown" /><category term="html" /><category term="subscript" /><category term="superscript" /><summary type="html"><![CDATA[How to use HTML to create sub- and superscript.]]></summary></entry></feed>
+<p>The final line is the command to convert the <code class="language-plaintext highlighter-rouge">.dot</code> files found into the <code class="language-plaintext highlighter-rouge">.svg</code> format, and save the converted files with the same file name as the source, but with an <code class="language-plaintext highlighter-rouge">svg</code> suffix.</p>]]></content><author><name>Paul Dürnberger</name></author><category term="linux" /><category term="bash" /><category term="loop" /><summary type="html"><![CDATA[A simple process to convert a batch of .dot diagrams into the .svg format using a for loop.]]></summary></entry></feed>
