@@ -6,6 +6,10 @@ tags:
   - nano
 ---
 
+Nano configuration and markdown syntax highlighting.
+
+<!--more-->
+
 ### ~/.nanorc
 
 ```
